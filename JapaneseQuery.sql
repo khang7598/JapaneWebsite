@@ -53,8 +53,8 @@ go
 Create table [Test]
 (
 	[IdTest] Integer Identity(1,1) NOT NULL,
-	[N] Char(2) NOT NULL foreign key references [Level]([N]) on update cascade, 
 	[Name] ntext NOT NULL,
+	[N] Char(2) NOT NULL foreign key references [Level]([N]) on update cascade, 
 	[Detail] ntext NULL,
 Primary Key ([IdTest])
 ) 
@@ -73,3 +73,4 @@ Create table [Question]
 Primary Key ([IdQuestion])
 ) 
 
+drop table Test

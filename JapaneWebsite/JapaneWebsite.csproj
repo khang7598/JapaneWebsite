@@ -199,6 +199,7 @@
     <Compile Include="Areas\Admin\Controllers\TestsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ThemeOfPostsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DoTestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LearningPostsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -1357,6 +1358,8 @@
     <Content Include="Views\Shared\_ArticleVanHoaNhat.cshtml" />
     <Content Include="Views\TraditionPosts\Details.cshtml" />
     <Content Include="Views\TraditionPosts\Index.cshtml" />
+    <Content Include="Views\DoTest\Test.cshtml" />
+    <Content Include="Views\Shared\_ArticleTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

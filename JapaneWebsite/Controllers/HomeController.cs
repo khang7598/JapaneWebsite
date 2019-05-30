@@ -27,6 +27,10 @@ namespace JapaneWebsite.Controllers
         {
             return db.CulturalPosts.ToList();
         }
+        public List<Test> GetTestPosts()
+        {
+            return db.Tests.ToList();
+        }
 
         public ActionResult Index()
         {
@@ -34,6 +38,7 @@ namespace JapaneWebsite.Controllers
             model.studyPosts = GetStudyPost();
             model.themeOfPosts = GetThemeOfPosts();
             model.culturalPosts = GetCulturalPosts();
+            model.Tests = GetTestPosts();
             return View(model);
         }
     }
