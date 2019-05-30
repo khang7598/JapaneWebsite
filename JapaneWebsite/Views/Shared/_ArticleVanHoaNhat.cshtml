@@ -1,0 +1,20 @@
+﻿@model JapaneWebsite.Models.ViewModel
+
+@{
+    if (Model != null)
+    {
+        foreach (var item in Model.culturalPosts)
+        {
+            <div class="card-body">
+                <img class="rounded float-left col-2" alt="Error" src="@item.Img" style="height:178px;width:200px;" />
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.Description</p>
+                @*<a href="#" class="btn btn-primary">Tiếp tục</a>*@
+                @Html.ActionLink("Tiếp tục", "Details", "TraditionPosts", new { id = @item.IdCultural }, new { @class = "btn btn-primary" })
+            </div>
+            <hr />
+        }
+    }
+}
+
+
