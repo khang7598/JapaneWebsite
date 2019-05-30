@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JapaneDataModelStoreContainer" CdmEntityContainer="JapaneDataEntities">
+    <EntitySetMapping Name="CulturalPosts">
+      <EntityTypeMapping TypeName="JapaneDataModel.CulturalPost">
+        <MappingFragment StoreEntitySet="CulturalPost">
+          <ScalarProperty Name="IdCultural" ColumnName="IdCultural" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="IdPlace" ColumnName="IdPlace" />
+          <ScalarProperty Name="IdThemePost" ColumnName="IdThemePost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Levels">
+      <EntityTypeMapping TypeName="JapaneDataModel.Level">
+        <MappingFragment StoreEntitySet="Level">
+          <ScalarProperty Name="N" ColumnName="N" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Places">
+      <EntityTypeMapping TypeName="JapaneDataModel.Place">
+        <MappingFragment StoreEntitySet="Place">
+          <ScalarProperty Name="IdPlace" ColumnName="IdPlace" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="JapaneDataModel.Question">
+        <MappingFragment StoreEntitySet="Question">
+          <ScalarProperty Name="IdQuestion" ColumnName="IdQuestion" />
+          <ScalarProperty Name="IdTest" ColumnName="IdTest" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Option1" ColumnName="Option1" />
+          <ScalarProperty Name="Option2" ColumnName="Option2" />
+          <ScalarProperty Name="Option3" ColumnName="Option3" />
+          <ScalarProperty Name="Option4" ColumnName="Option4" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudyPosts">
+      <EntityTypeMapping TypeName="JapaneDataModel.StudyPost">
+        <MappingFragment StoreEntitySet="StudyPost">
+          <ScalarProperty Name="IdStudyPost" ColumnName="IdStudyPost" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="N" ColumnName="N" />
+          <ScalarProperty Name="IdThemePost" ColumnName="IdThemePost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tests">
+      <EntityTypeMapping TypeName="JapaneDataModel.Test">
+        <MappingFragment StoreEntitySet="Test">
+          <ScalarProperty Name="IdTest" ColumnName="IdTest" />
+          <ScalarProperty Name="N" ColumnName="N" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThemeOfPosts">
+      <EntityTypeMapping TypeName="JapaneDataModel.ThemeOfPost">
+        <MappingFragment StoreEntitySet="ThemeOfPost">
+          <ScalarProperty Name="IdThemePost" ColumnName="IdThemePost" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
