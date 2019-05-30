@@ -39,7 +39,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
         // GET: Admin/Questions/Create
         public ActionResult Create()
         {
-            ViewBag.IdTest = new SelectList(db.Tests, "IdTest", "N");
+            ViewBag.IdTest = new SelectList(db.Tests, "IdTest", "Name");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdTest = new SelectList(db.Tests, "IdTest", "N", question.IdTest);
+            ViewBag.IdTest = new SelectList(db.Tests, "IdTest", "Name", question.IdTest);
             return View(question);
         }
 
@@ -73,7 +73,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IdTest = new SelectList(db.Tests, "IdTest", "N", question.IdTest);
+            ViewBag.IdTest = new SelectList(db.Tests, "IdTest", "Name", question.IdTest);
             return View(question);
         }
 
@@ -90,7 +90,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdTest = new SelectList(db.Tests, "IdTest", "N", question.IdTest);
+            ViewBag.IdTest = new SelectList(db.Tests, "IdTest", "Name", question.IdTest);
             return View(question);
         }
 

@@ -66,8 +66,8 @@
       <PropertyRef Name="IdTest" />
     </Key>
     <Property Name="IdTest" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="N" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="N" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Level" Relationship="Self.FK__Test__N__4BAC3F29" FromRole="Test" ToRole="Level" />
     <NavigationProperty Name="Questions" Relationship="Self.FK__Question__IdTest__4E88ABD4" FromRole="Test" ToRole="Question" />

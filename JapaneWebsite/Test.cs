@@ -21,8 +21,8 @@ namespace JapaneWebsite
         }
     
         public int IdTest { get; set; }
-        public string N { get; set; }
         public string Name { get; set; }
+        public string N { get; set; }
         public string Detail { get; set; }
     
         public virtual Level Level { get; set; }

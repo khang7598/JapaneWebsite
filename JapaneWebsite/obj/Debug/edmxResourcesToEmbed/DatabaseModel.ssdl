@@ -58,8 +58,8 @@
       <PropertyRef Name="IdTest" />
     </Key>
     <Property Name="IdTest" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="N" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="Name" Type="ntext" Nullable="false" />
+    <Property Name="N" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="Detail" Type="ntext" />
   </EntityType>
   <EntityType Name="ThemeOfPost">
@@ -94,7 +94,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Question__IdTest__4E88ABD4">
+  <Association Name="FK__Question__IdTest__5441852A">
     <End Role="Test" Type="Self.Test" Multiplicity="1" />
     <End Role="Question" Type="Self.Question" Multiplicity="*" />
     <ReferentialConstraint>
@@ -130,7 +130,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Test__N__4BAC3F29">
+  <Association Name="FK__Test__N__5165187F">
     <End Role="Level" Type="Self.Level" Multiplicity="1" />
     <End Role="Test" Type="Self.Test" Multiplicity="*" />
     <ReferentialConstraint>
@@ -158,7 +158,7 @@
       <End Role="ThemeOfPost" EntitySet="ThemeOfPost" />
       <End Role="CulturalPost" EntitySet="CulturalPost" />
     </AssociationSet>
-    <AssociationSet Name="FK__Question__IdTest__4E88ABD4" Association="Self.FK__Question__IdTest__4E88ABD4">
+    <AssociationSet Name="FK__Question__IdTest__5441852A" Association="Self.FK__Question__IdTest__5441852A">
       <End Role="Test" EntitySet="Test" />
       <End Role="Question" EntitySet="Question" />
     </AssociationSet>
@@ -170,7 +170,7 @@
       <End Role="Level" EntitySet="Level" />
       <End Role="StudyPost" EntitySet="StudyPost" />
     </AssociationSet>
-    <AssociationSet Name="FK__Test__N__4BAC3F29" Association="Self.FK__Test__N__4BAC3F29">
+    <AssociationSet Name="FK__Test__N__5165187F" Association="Self.FK__Test__N__5165187F">
       <End Role="Level" EntitySet="Level" />
       <End Role="Test" EntitySet="Test" />
     </AssociationSet>

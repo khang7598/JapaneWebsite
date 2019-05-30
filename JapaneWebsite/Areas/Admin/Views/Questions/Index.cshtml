@@ -30,7 +30,7 @@
             @Html.DisplayNameFor(model => model.Answer)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Test.N)
+            @Html.DisplayNameFor(model => model.Test.Name)
         </th>
         <th></th>
     </tr>
@@ -56,7 +56,7 @@
             @Html.DisplayFor(modelItem => item.Answer)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Test.N)
+            @Html.DisplayFor(modelItem => item.Test.Name)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.IdQuestion }) |

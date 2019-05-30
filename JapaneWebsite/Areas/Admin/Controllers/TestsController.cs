@@ -48,7 +48,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdTest,N,Name,Detail")] Test test)
+        public ActionResult Create([Bind(Include = "IdTest,Name,N,Detail")] Test test)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdTest,N,Name,Detail")] Test test)
+        public ActionResult Edit([Bind(Include = "IdTest,Name,N,Detail")] Test test)
         {
             if (ModelState.IsValid)
             {

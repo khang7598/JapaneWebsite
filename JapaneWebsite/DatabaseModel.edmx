@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="JapaneDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="JapaneDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CulturalPost">
           <Key>
             <PropertyRef Name="IdCultural" />
@@ -63,8 +63,8 @@
             <PropertyRef Name="IdTest" />
           </Key>
           <Property Name="IdTest" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="N" Type="char" MaxLength="2" Nullable="false" />
           <Property Name="Name" Type="ntext" Nullable="false" />
+          <Property Name="N" Type="char" MaxLength="2" Nullable="false" />
           <Property Name="Detail" Type="ntext" />
         </EntityType>
         <EntityType Name="ThemeOfPost">
@@ -99,7 +99,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Question__IdTest__4E88ABD4">
+        <Association Name="FK__Question__IdTest__5441852A">
           <End Role="Test" Type="Self.Test" Multiplicity="1" />
           <End Role="Question" Type="Self.Question" Multiplicity="*" />
           <ReferentialConstraint>
@@ -135,7 +135,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Test__N__4BAC3F29">
+        <Association Name="FK__Test__N__5165187F">
           <End Role="Level" Type="Self.Level" Multiplicity="1" />
           <End Role="Test" Type="Self.Test" Multiplicity="*" />
           <ReferentialConstraint>
@@ -163,7 +163,7 @@
             <End Role="ThemeOfPost" EntitySet="ThemeOfPost" />
             <End Role="CulturalPost" EntitySet="CulturalPost" />
           </AssociationSet>
-          <AssociationSet Name="FK__Question__IdTest__4E88ABD4" Association="Self.FK__Question__IdTest__4E88ABD4">
+          <AssociationSet Name="FK__Question__IdTest__5441852A" Association="Self.FK__Question__IdTest__5441852A">
             <End Role="Test" EntitySet="Test" />
             <End Role="Question" EntitySet="Question" />
           </AssociationSet>
@@ -175,13 +175,12 @@
             <End Role="Level" EntitySet="Level" />
             <End Role="StudyPost" EntitySet="StudyPost" />
           </AssociationSet>
-          <AssociationSet Name="FK__Test__N__4BAC3F29" Association="Self.FK__Test__N__4BAC3F29">
+          <AssociationSet Name="FK__Test__N__5165187F" Association="Self.FK__Test__N__5165187F">
             <End Role="Level" EntitySet="Level" />
             <End Role="Test" EntitySet="Test" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="JapaneDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -251,8 +250,8 @@
             <PropertyRef Name="IdTest" />
           </Key>
           <Property Name="IdTest" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="N" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="N" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Level" Relationship="Self.FK__Test__N__4BAC3F29" FromRole="Test" ToRole="Level" />
           <NavigationProperty Name="Questions" Relationship="Self.FK__Question__IdTest__4E88ABD4" FromRole="Test" ToRole="Question" />
