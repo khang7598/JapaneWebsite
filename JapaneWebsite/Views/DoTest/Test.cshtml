@@ -4,12 +4,12 @@
 
         $(document).ready(function () {
 
-                        countDown('12:10')
-                        $('#definition').on('click', function () {
+            countDown('12:10')
+            $('#definition').on('click', function () {
                 $("form").submit();
             });
 
-                        $('input#hintbtn39').on('click', function () {
+            $('input#hintbtn39').on('click', function () {
                 $("#div34").toggle();
                 $("#div35").toggle();
                 $("#div36").toggle();
@@ -49,7 +49,7 @@
 
             });
 
-                        $('input#hintbtn69').on('click', function () {
+            $('input#hintbtn69').on('click', function () {
                 $("#div64").toggle();
                 $("#div65").toggle();
                 $("#div66").toggle();
@@ -89,7 +89,7 @@
 
             });
 
-                        $('input#hintbtn99').on('click', function () {
+            $('input#hintbtn99').on('click', function () {
                 $("#div94").toggle();
                 $("#div95").toggle();
                 $("#div96").toggle();
@@ -129,7 +129,7 @@
 
             });
 
-                        $('input#hintbtn129').on('click', function () {
+            $('input#hintbtn129').on('click', function () {
                 $("#div124").toggle();
                 $("#div125").toggle();
                 $("#div126").toggle();
@@ -169,7 +169,7 @@
 
             });
 
-                        $('input#hintbtn159').on('click', function () {
+            $('input#hintbtn159').on('click', function () {
                 $("#div154").toggle();
                 $("#div155").toggle();
                 $("#div156").toggle();
@@ -209,7 +209,7 @@
 
             });
 
-                        $('input#hintbtn189').on('click', function () {
+            $('input#hintbtn189').on('click', function () {
                 $("#div184").toggle();
                 $("#div185").toggle();
                 $("#div186").toggle();
@@ -249,7 +249,7 @@
 
             });
 
-                        $('input#hintbtn219').on('click', function () {
+            $('input#hintbtn219').on('click', function () {
                 $("#div214").toggle();
                 $("#div215").toggle();
                 $("#div216").toggle();
@@ -289,7 +289,7 @@
 
             });
 
-                        $('input#hintbtn249').on('click', function () {
+            $('input#hintbtn249').on('click', function () {
                 $("#div244").toggle();
                 $("#div245").toggle();
                 $("#div246").toggle();
@@ -329,7 +329,7 @@
 
             });
 
-                    });
+        });
     </script>
 </head>
 @{
@@ -338,53 +338,22 @@
 
 <h2>Test</h2>
 @{
-    if (Model != null)
-    {
         foreach (var item in Model.questions)
         {
-<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-    <span class="col-sm-12 text-left">
-        <ol class="breadcrumb">
-            <li><a href="/index">ホーム</a></li>
-        </ol>
-
-        <div>
-            <div class="countdown">残時間：9:03</div>
-        </div>                        <div style="height: 10px;"></div>
-        <div class="col-sm-12 question-label paddingQuestion">1。　@item.Name。</div>
-        <div class="form-check paddingQuestion">
-            <label>
-                <input id="select30" type="radio" name="radioTest38" value="ほうこう"><span id="content46" class="label-text">@item.Option1</span>
-            </label>
-        </div>
-        <div class="form-check paddingQuestion">
-            <label>
-                <input id="select31" type="radio" name="radioTest38" value="ほうぼう"><span id="content42" class="label-text">@item.Option2</span>
-            </label>
-        </div>
-        <div class="form-check paddingQuestion">
-            <label>
-                <input id="select32" type="radio" name="radioTest38" value="ほうごう"><span id="content43" class="label-text">@item.Option3</span>
-            </label>
-        </div>
-        <div class="form-check paddingQuestion">
-            <label>
-                <input id="select33" type="radio" name="radioTest38" value="ほうほう"><span id="content44" class="label-text">@item.Option4</span>
-            </label>
-        </div>
-        <div id="radioTest38" style="color:red"></div>
-        <div class="result1"></div>
-        <div style="height: 10px;"></div>
-        
-
-        
-        
-
-        
-    </span>
-    
-</div>
+            <div>
+                <div class="countdown">残時間：9:03</div>
+            </div> <div style="height: 10px;"></div>
+            <p>
+                @item.Name
+                <br />
+                <input name="radioTest38" type="radio" value="1">@item.Option1
+                <br />
+                <input name="radioTest38" type="radio" value="2">@item.Option2
+                <br />
+                <input name="radioTest38" type="radio" value="3">@item.Option3
+                <br />
+                <input name="radioTest38" type="radio" value="4">@item.Option4
+            </p>
         }
-    }
 }
 
