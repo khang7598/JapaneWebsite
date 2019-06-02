@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ShareLayout.cshtml";
 }
 
 <h2>Index</h2>
@@ -47,7 +48,7 @@
             @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.Date))          
         </td>
         <td>
-            <img src="@item.Img" height="100px" width="100px"/>
+            <img src="@item.Img" height="100" width="100"/>
         </td>
         <td>
             @Html.Raw(item.Detail)
