@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-sm-9">
             <div class="card">
-                <div class="card-header" style="height:50px;background-color:#ff7eb1">
+                <div class="card-header" style="height:50px">
                     <h4>Tin tức</h4>
                 </div>
                 <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
@@ -36,34 +36,34 @@
             </div>
             <hr />
             <div class="card">
-                <div class="card-header" style="height:50px;background-color:#ff7eb1">
+                <div class="card-header" style="height:50px;">
                     <h4>Học tiếng Nhật</h4>
                 </div>
                 @Html.Partial("_ArticleHocTiengNhat", Model)
 
-                <div class="card-footer text-right" style="background-color:#ff7eb1">
-                    
+                <div class="card-footer text-right" style="">
+
                     @Html.ActionLink("Xem thêm", "Index", "LearningPosts", null, new { @class = "card-link" })
                 </div>
             </div>
-
+            <hr />
             <div class="card">
-                <div class="card-header" style="height:50px;background-color:#ff7eb1">
+                <div class="card-header" style="height:50px">
                     <h4>Văn hóa</h4>
                 </div>
                 @Html.Partial("_ArticleVanHoaNhat", Model)
 
-                <div class="card-footer text-right" style="background-color:#ff7eb1">
+                <div class="card-footer text-right" style="">
                     @Html.ActionLink("Xem thêm", "Index", "TraditionPosts", null, new { @class = "card-link" })
                 </div>
             </div>
             <hr />
             <div class="card">
-                <div class="card-header" style="height:50px;background-color:#ff7eb1">
+                <div class="card-header" style="height:50px;">
                     <h4>Thi Thử JLPT</h4>
                 </div>
                 @Html.Partial("_ArticleTest", Model)
-                <div class="card-footer text-right" style="background-color:#ff7eb1">
+                <div class="card-footer text-right" style="">
                     <a href="#" class="card-link">Xem thêm</a>
                 </div>
             </div>
@@ -72,7 +72,7 @@
             @Html.Partial("_Aside", Model)
             <br />
             <div class="card">
-                <h4 class="card-header text-center" style="background-color:#ff7eb1">Bài Viết</h4>
+                <h4 class="card-header text-center" style="">Bài Viết</h4>
                 <div class="card-body">
                     <h6 class="card-title">Tổng hợp từ vựng N5</h6>
                     <p class="card-text" style="overflow:hidden">Đây là bài tổng hợp tất cả các từ vựng N5 có được</p>
@@ -104,10 +104,7 @@
                 </div>
 
             </div>
-
             <hr class="d-sm-none">
         </div>
-
-
     </div>
 </div>

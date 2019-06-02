@@ -12,18 +12,12 @@ namespace JapaneWebsite
     using System;
     using System.Collections.Generic;
     
-    public partial class StudyPost
+    public partial class sysdiagram
     {
-        public int IdStudyPost { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public System.DateTime Date { get; set; }
-        public string Img { get; set; }
-        public string Detail { get; set; }
-        public string N { get; set; }
-        public Nullable<int> IdThemePost { get; set; }
-    
-        public virtual Level Level { get; set; }
-        public virtual ThemeOfPost ThemeOfPost { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

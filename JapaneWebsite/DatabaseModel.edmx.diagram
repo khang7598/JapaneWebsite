@@ -18,6 +18,7 @@
         <AssociationConnector Association="JapaneDataModel.FK__Test__N__5165187F" ManuallyRouted="false" />
         <AssociationConnector Association="JapaneDataModel.FK__Question__IdTest__5441852A" ManuallyRouted="false" />
         <AssociationConnector Association="JapaneDataModel.FK__StudyPost__IdThe__3E52440B" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="JapaneDataModel.sysdiagram" Width="1.5" PointX="6.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

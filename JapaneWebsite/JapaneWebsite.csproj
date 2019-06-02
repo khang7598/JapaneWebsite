@@ -245,6 +245,9 @@
     <Compile Include="StudyPost.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Test.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
