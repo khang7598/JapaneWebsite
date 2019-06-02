@@ -1,3 +1,0 @@
-# JapaneWebsite
-
-Thay file webconfig
