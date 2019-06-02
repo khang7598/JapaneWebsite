@@ -245,9 +245,6 @@
     <Compile Include="StudyPost.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Test.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -1272,13 +1269,6 @@
     <Content Include="Plugin\ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
     <Content Include="Plugin\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="Plugin\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
-    <EntityDeploy Include="DatabaseModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DatabaseModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DatabaseModel.edmx.diagram">
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\StudyPosts\Create.cshtml" />
     <Content Include="Areas\Admin\Views\StudyPosts\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\StudyPosts\Details.cshtml" />
@@ -1331,6 +1321,13 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="DatabaseModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DatabaseModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DatabaseModel.edmx.diagram">
+      <DependentUpon>DatabaseModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1408,7 +1405,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

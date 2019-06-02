@@ -227,7 +227,6 @@ C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\JapaneWebsite\Jap
 C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\JapaneWebsite\JapaneWebsite\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\JapaneWebsite\JapaneWebsite\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\JapaneWebsite\JapaneWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.csprojAssemblyReference.cache
 C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.csproj.CoreCompileInputs.cache
 C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.csproj.CopyComplete
 C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.dll
@@ -344,8 +343,9 @@ D:\Dev\JapaneWebsite\JapaneWebsite\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Dev\JapaneWebsite\JapaneWebsite\bin\System.Diagnostics.DiagnosticSource.xml
 D:\Dev\JapaneWebsite\JapaneWebsite\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 D:\Dev\JapaneWebsite\JapaneWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Dev\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.csprojAssemblyReference.cache
 D:\Dev\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.csproj.CoreCompileInputs.cache
 D:\Dev\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.csproj.CopyComplete
 D:\Dev\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.dll
 D:\Dev\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.pdb
-D:\Dev\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.csprojAssemblyReference.cache
+C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.csprojAssemblyReference.cache

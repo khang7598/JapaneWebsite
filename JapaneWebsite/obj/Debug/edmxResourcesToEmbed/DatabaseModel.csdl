@@ -21,7 +21,7 @@
     </Key>
     <Property Name="N" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
     <NavigationProperty Name="StudyPosts" Relationship="Self.FK__StudyPost__N__3D5E1FD2" FromRole="Level" ToRole="StudyPost" />
-    <NavigationProperty Name="Tests" Relationship="Self.FK__Test__N__4BAC3F29" FromRole="Level" ToRole="Test" />
+    <NavigationProperty Name="Tests" Relationship="Self.FK__Test__N__5165187F" FromRole="Level" ToRole="Test" />
   </EntityType>
   <EntityType Name="Place">
     <Key>
@@ -44,7 +44,7 @@
     <Property Name="Option3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Option4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Test" Relationship="Self.FK__Question__IdTest__4E88ABD4" FromRole="Question" ToRole="Test" />
+    <NavigationProperty Name="Test" Relationship="Self.FK__Question__IdTest__5441852A" FromRole="Question" ToRole="Test" />
   </EntityType>
   <EntityType Name="StudyPost">
     <Key>
@@ -69,8 +69,8 @@
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="N" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Level" Relationship="Self.FK__Test__N__4BAC3F29" FromRole="Test" ToRole="Level" />
-    <NavigationProperty Name="Questions" Relationship="Self.FK__Question__IdTest__4E88ABD4" FromRole="Test" ToRole="Question" />
+    <NavigationProperty Name="Level" Relationship="Self.FK__Test__N__5165187F" FromRole="Test" ToRole="Level" />
+    <NavigationProperty Name="Questions" Relationship="Self.FK__Question__IdTest__5441852A" FromRole="Test" ToRole="Question" />
   </EntityType>
   <EntityType Name="ThemeOfPost">
     <Key>
@@ -118,7 +118,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Test__N__4BAC3F29">
+  <Association Name="FK__Test__N__5165187F">
     <End Role="Level" Type="Self.Level" Multiplicity="1" />
     <End Role="Test" Type="Self.Test" Multiplicity="*" />
     <ReferentialConstraint>
@@ -130,7 +130,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Question__IdTest__4E88ABD4">
+  <Association Name="FK__Question__IdTest__5441852A">
     <End Role="Test" Type="Self.Test" Multiplicity="1" />
     <End Role="Question" Type="Self.Question" Multiplicity="*" />
     <ReferentialConstraint>
@@ -174,11 +174,11 @@
       <End Role="Level" EntitySet="Levels" />
       <End Role="StudyPost" EntitySet="StudyPosts" />
     </AssociationSet>
-    <AssociationSet Name="FK__Test__N__4BAC3F29" Association="Self.FK__Test__N__4BAC3F29">
+    <AssociationSet Name="FK__Test__N__5165187F" Association="Self.FK__Test__N__5165187F">
       <End Role="Level" EntitySet="Levels" />
       <End Role="Test" EntitySet="Tests" />
     </AssociationSet>
-    <AssociationSet Name="FK__Question__IdTest__4E88ABD4" Association="Self.FK__Question__IdTest__4E88ABD4">
+    <AssociationSet Name="FK__Question__IdTest__5441852A" Association="Self.FK__Question__IdTest__5441852A">
       <End Role="Test" EntitySet="Tests" />
       <End Role="Question" EntitySet="Questions" />
     </AssociationSet>
@@ -186,16 +186,5 @@
       <End Role="ThemeOfPost" EntitySet="ThemeOfPosts" />
       <End Role="StudyPost" EntitySet="StudyPosts" />
     </AssociationSet>
-    <EntitySet Name="sysdiagrams" EntityType="JapaneDataModel.sysdiagram" />
   </EntityContainer>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
 </Schema>
