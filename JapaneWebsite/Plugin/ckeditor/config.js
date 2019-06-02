@@ -22,5 +22,4 @@ CKEDITOR.editorConfig = function( config ) {
     config.filebrowserImageUploadUrl = '/Plugin/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images';
 
     config.filebrowserFlashUploadUrl = '/Plugin/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Flash';
-
 };
