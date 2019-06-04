@@ -1,4 +1,8 @@
-﻿
+﻿<style>
+    .dropdown:hover>.dropdown-menu{
+        display:block;
+    }
+</style>
 <header>
     <div class="jumbotron jumbotron-fluid header" style="margin-bottom:0">
         <div class="container">
@@ -20,7 +24,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="~/">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Từ Vựng
                 </a>
@@ -32,7 +36,7 @@
                     <a class="dropdown-item" href="#">Từ vựng N1</a>
                 </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Ngữ Pháp
                 </a>
@@ -50,5 +54,26 @@
             <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         @Html.Partial("_LoginPartial")
+        @*<div class="dropdown-menu">
+            <form class="dropdown-menu p-4">
+                <div class="form-group">
+                    <label for="exampleDropdownFormEmail2">Email address</label>
+                    <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="exampleDropdownFormPassword2">Password</label>
+                    <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                        <label class="form-check-label" for="dropdownCheck2">
+                            Remember me
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+        </div>*@
     </div>
 </nav>

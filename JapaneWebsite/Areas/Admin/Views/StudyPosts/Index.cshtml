@@ -23,9 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Img)
         </th>
-        <th>
+        @*<th style="width:100px;text-overflow:ellipsis">
             @Html.DisplayNameFor(model => model.Detail)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Level.N)
         </th>
@@ -49,9 +49,9 @@
         <td>
             <img src="@item.Img" height="100px" width="100px"/>
         </td>
-        <td>
+        @*<td style="width:100px;text-overflow:ellipsis">
             @Html.Raw(item.Detail)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Level.N)
         </td>

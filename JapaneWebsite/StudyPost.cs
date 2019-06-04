@@ -11,13 +11,15 @@ namespace JapaneWebsite
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web.Mvc;
+
     public partial class StudyPost
     {
         public int IdStudyPost { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public System.DateTime Date { get; set; }
+        [AllowHtml]
         public string Img { get; set; }
         public string Detail { get; set; }
         public string N { get; set; }
