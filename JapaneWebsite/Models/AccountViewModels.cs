@@ -64,6 +64,11 @@ namespace JapaneWebsite.Models
 
     public class RegisterViewModel
     {
+        [Display(Name = "FirstName"), Required]
+        public string FirstName { get; set; }
+
+        [Display(Name = "LastName"), Required]
+        public string LastName { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

@@ -61,6 +61,16 @@
     <NavigationProperty Name="Level" Relationship="Self.FK__StudyPost__N__3D5E1FD2" FromRole="StudyPost" ToRole="Level" />
     <NavigationProperty Name="ThemeOfPost" Relationship="Self.FK__StudyPost__IdThe__3E52440B" FromRole="StudyPost" ToRole="ThemeOfPost" />
   </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="Test">
     <Key>
       <PropertyRef Name="IdTest" />
@@ -160,6 +170,7 @@
     <EntitySet Name="Places" EntityType="Self.Place" />
     <EntitySet Name="Questions" EntityType="Self.Question" />
     <EntitySet Name="StudyPosts" EntityType="Self.StudyPost" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="Tests" EntityType="Self.Test" />
     <EntitySet Name="ThemeOfPosts" EntityType="Self.ThemeOfPost" />
     <AssociationSet Name="FK__CulturalP__IdPla__47DBAE45" Association="Self.FK__CulturalP__IdPla__47DBAE45">
@@ -186,16 +197,5 @@
       <End Role="ThemeOfPost" EntitySet="ThemeOfPosts" />
       <End Role="StudyPost" EntitySet="StudyPosts" />
     </AssociationSet>
-    <EntitySet Name="sysdiagrams" EntityType="JapaneDataModel.sysdiagram" />
   </EntityContainer>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
 </Schema>

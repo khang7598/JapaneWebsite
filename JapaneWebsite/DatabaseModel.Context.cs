@@ -30,8 +30,8 @@ namespace JapaneWebsite
         public virtual DbSet<Place> Places { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<StudyPost> StudyPosts { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Test> Tests { get; set; }
         public virtual DbSet<ThemeOfPost> ThemeOfPosts { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }
