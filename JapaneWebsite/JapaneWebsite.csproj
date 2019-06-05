@@ -200,6 +200,18 @@
     <Compile Include="Areas\Admin\Controllers\StudyPostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TestsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ThemeOfPostsController.cs" />
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DoTestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -207,6 +219,9 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TraditionPostsController.cs" />
     <Compile Include="CulturalPost.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DatabaseModel.Context.cs">

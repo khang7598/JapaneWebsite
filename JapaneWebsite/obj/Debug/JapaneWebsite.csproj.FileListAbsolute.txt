@@ -343,7 +343,6 @@ D:\Dev\JapaneWebsite\JapaneWebsite\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Dev\JapaneWebsite\JapaneWebsite\bin\System.Diagnostics.DiagnosticSource.xml
 D:\Dev\JapaneWebsite\JapaneWebsite\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 D:\Dev\JapaneWebsite\JapaneWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Dev\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.csprojAssemblyReference.cache
 D:\Dev\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.csproj.CoreCompileInputs.cache
 D:\Dev\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.csproj.CopyComplete
 D:\Dev\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.dll
@@ -466,3 +465,4 @@ C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\New folder\Japane
 C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\New folder\JapaneWebsite - 1\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.dll
 C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\New folder\JapaneWebsite - 1\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.pdb
 C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\New folder\JapaneWebsite - 1\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.csprojAssemblyReference.cache
+D:\Dev\JapaneWebsite\JapaneWebsite\obj\Debug\JapaneWebsite.csprojAssemblyReference.cache
