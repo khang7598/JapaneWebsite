@@ -3,9 +3,8 @@
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@*@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <h4>Create a new account.</h4>
@@ -46,8 +45,70 @@
             <input type="submit" class="btn btn-default" value="Register" />
         </div>
     </div>
-}
+}*@
+<body class="bg-light">
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    <div class="container">
+        <div class="card card-register mx-auto mt-4">
+            <div class="card-header text-center">Sign Up</div>
+            <div class="card-body">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <p>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    </p>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <label for="firstName">First name:</label>
+                                    <input type="text" id="firstName" class="form-control" name="FirstName" placeholder="First name" required="required" autofocus="autofocus">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <label for="lastName">Last name:</label>
+                                    <input type="text" id="lastName" class="form-control" name="LastName" placeholder="Last name" required="required">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <label for="inputEmail">Email:</label>
+                            <input type="email" id="inputEmail" class="form-control" name="Email" placeholder="Email address" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <label for="inputPassword">Password:</label>
+                                    <input type="password" id="inputPassword" class="form-control" name="Password" placeholder="Password" required="required">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <label for="confirmPassword">Confirm password:</label>
+                                    <input type="password" id="confirmPassword" class="form-control" name="ConfirmPassword" placeholder="Confirm password" required="required">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-outline-success btn-block" name="Register">Register</button>
+                    </div>
+                }
+                <div class="text-center">
+                    <a class="d-block small mt-3" href="~/Account/Login">Login Page</a>
+                    <a class="d-block small" href="~/Account/ForgotPassword">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

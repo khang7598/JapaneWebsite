@@ -4,8 +4,7 @@
     ViewBag.Title = "Log in";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
+@*<div class="row">
     <div class="col-md-8">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -42,24 +41,63 @@
                 </div>
                 <p>
                     @Html.ActionLink("Register as a new user", "Register")
-                </p>
+                </p>*@
                 @* Enable this once you have account confirmation enabled for password reset functionality
                     <p>
                         @Html.ActionLink("Forgot your password?", "ForgotPassword")
                     </p>*@
-            }
+            @*}
         </section>
     </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
+</div>*@
+
+<style>
+    .help-block ul {
+        list-style-type: none;
+    }
+</style>
+<body class="bg-light">
+
+    <div class="container">
+        <div class="card mt-4 text-center" style="width:400px;margin:auto">
+            <div class="card-header">Login</div>
+            <div class="card-body">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                <span class="help-block">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                </span> 
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="Email" required="required" autofocus="autofocus">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="Password" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-outline-success btn-block" name="Login">Login</button>
+                    </div>
+                }
+                <div class="text-center">
+                    <a class="d-block small mt-3" href="~/Account/Register">Register an Account</a>
+                    <a class="d-block small" href="~/Account/ForgotPassword">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
-
-
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    </body>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
