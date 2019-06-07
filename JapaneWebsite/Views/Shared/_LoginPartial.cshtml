@@ -6,7 +6,7 @@
         @Html.AntiForgeryToken()  
         <ul class="nav bg-light ml-sm-2 shadow">
             <li class="nav-link active">@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
-            <li class="nav-link active"><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            <li class="nav-link active"><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fas fa-sign-out-alt"></i></a></li>
         </ul>
     }
 }
@@ -30,21 +30,13 @@ else
                             <div class="form-group">
                                 <div class="form-label-group">
                                     <label for="inputEmail">Email:</label>
-                                    <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="Email" required="required" autofocus="autofocus">
+                                    <input type="email"  class="form-control" placeholder="Email" name="Email" required="required" autofocus="autofocus">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-label-group">
                                     <label for="inputPassword">Password:</label>
-                                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="Password" required="required">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="remember-me" name="RememberMe">
-                                        Remember Password
-                                    </label>
+                                    <input type="password"  class="form-control" placeholder="Password" name="Password" required="required">
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -67,7 +59,7 @@ else
                         </button>
                     </div>
                     <div class="modal-body">
-                        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        @using (Html.BeginForm("Register", "Account", new { area = "" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                         {
                             @Html.AntiForgeryToken()
                             <div class="form-group">
