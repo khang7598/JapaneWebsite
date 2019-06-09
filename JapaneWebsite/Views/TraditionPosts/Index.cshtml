@@ -1,6 +1,8 @@
 ﻿@model IEnumerable<JapaneWebsite.CulturalPost>
-
+@using PagedList;
 @{
+    /**/
+
     ViewBag.Title = "Index";
 }
 
@@ -24,9 +26,6 @@
             @Html.DisplayNameFor(model => model.Img)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Detail)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Place.CityName)
         </th>
         <th>
@@ -35,35 +34,59 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            <img src="@item.Img" height="100px" width="100px" />
-        </td>
-        <td>
-            @Html.Raw(item.Detail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Place.CityName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ThemeOfPost.Name)
-        </td>
-        <td>
-            
-            @Html.ActionLink("Details", "Details", new { id=item.IdCultural }) |
-            
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <img src="@item.Img" height="100px" width="100px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place.CityName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThemeOfPost.Name)
+            </td>
+            <td>
+
+                @Html.ActionLink("Details", "Details", new { id = item.IdCultural })
+
+            </td>
+        </tr>
+    }
 
 </table>
+
+
+@{
+    if (((IPagedList)Model).PageNumber == 1)
+    {
+        @Html.ActionLink("Previous page", "Index", new { Page_No = ((IPagedList)Model).PageNumber })
+    }
+    else
+    {
+        @Html.ActionLink("Previous page", "Index", new { Page_No = ((IPagedList)Model).PageNumber - 1 })
+    }
+
+}
+
+Page @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 0 : ((IPagedList)Model).PageNumber) in @(((IPagedList)Model).PageCount) (pages)|
+@{
+    if (((IPagedList)Model).PageNumber >= ((IPagedList)Model).PageCount)
+    {
+        @Html.ActionLink("Next page", "Index", new { Page_No = ((IPagedList)Model).PageNumber })
+    }
+    else
+    {
+        @Html.ActionLink("Next page", "Index", new { Page_No = ((IPagedList)Model).PageNumber + 1 })
+    }
+
+}

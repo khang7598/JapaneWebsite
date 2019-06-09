@@ -21,28 +21,32 @@
 
 </head>
 <body>
-    <form>
-        @for (var item = 0; item < list.Count; item++)
-        {
-            count++;
-            <div class="question">
-                <p><strong>@count</strong>: @list[item].Name</p>
-                <label>
-                    <input type="radio" name="@list[item].Name" value="@list[item].Option1">@list[item].Option1
-                </label>
-                <label>
-                    <input type="radio" name="@list[item].Name" value="@list[item].Option2">@list[item].Option2
-                </label>
-                <label>
-                    <input type="radio" name="@list[item].Name" value="@list[item].Option3">@list[item].Option3
-                </label>
-                <label>
-                    <input type="radio" name="@list[item].Name" value="@list[item].Option4">@list[item].Option4
-                </label>
-            </div>
-        }
-        <input type="submit" formmethod="post" />
-    </form>
+    <div style="text-align:center">
+        <form>
+            @for (var item = 0; item < list.Count; item++)
+            {
+
+                count++;
+                <div class="question">
+                    <p><strong>@count. @list[item].Name</strong></p>
+                    <label>
+                        <input type="radio" name="@list[item].Name" value="@list[item].Option1">@list[item].Option1
+                    </label>
+                    <label>
+                        <input type="radio" name="@list[item].Name" value="@list[item].Option2">@list[item].Option2
+                    </label>
+                    <label>
+                        <input type="radio" name="@list[item].Name" value="@list[item].Option3">@list[item].Option3
+                    </label>
+                    <label>
+                        <input type="radio" name="@list[item].Name" value="@list[item].Option4">@list[item].Option4
+                    </label>
+                </div>
+            }
+            <input type="submit" formmethod="post" />
+        </form>
+    </div>
+    
     <script>
         function clearAnswers() {
             $("img").each(function () {

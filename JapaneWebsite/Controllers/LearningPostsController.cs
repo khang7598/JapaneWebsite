@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using JapaneWebsite;
+using PagedList;
 
 namespace JapaneWebsite.Controllers
 {
@@ -15,10 +16,11 @@ namespace JapaneWebsite.Controllers
         private JapaneDataEntities db = new JapaneDataEntities();
 
         // GET: LearningPosts
-        public ActionResult Index()
+        public ActionResult Index(int? Page_No, int? cateId, int Size_Of_Page = 8)
         {
-            var studyPosts = db.StudyPosts.Include(s => s.Level).Include(s => s.ThemeOfPost);
-            return View(studyPosts.ToList());
+            int Number_Of_Page = (Page_No) ?? 1;
+            var studyPosts = db.StudyPosts.Include(s => s.Level).Include(s => s.ThemeOfPost).OrderBy(s => s.IdStudyPost).ToPagedList(Number_Of_Page, Size_Of_Page);
+            return View(studyPosts);
         }
 
         // GET: LearningPosts/Details/5

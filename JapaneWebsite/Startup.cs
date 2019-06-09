@@ -26,7 +26,9 @@ namespace JapaneWebsite
                 role.Name = "ADMIN";
                 roleManager.Create(role);
                 var user = new ApplicationUser();
-                user.UserName = "admin";
+                user.UserName = "admin@tkt.com";
+                user.FirstName = "Admin";
+                user.LastName = "Position";
                 user.Email = "admin@tkt.com";
                 string userPWD = "qweasd";
                 var chkUser = userManager.Create(user, userPWD);
@@ -41,7 +43,9 @@ namespace JapaneWebsite
                 role.Name = "MANAGER";
                 roleManager.Create(role);
                 var uManager = new ApplicationUser();
-                uManager.UserName = "manager";
+                uManager.UserName = "manager@tkt.com";
+                uManager.FirstName = "Manager";
+                uManager.LastName = "Position";
                 uManager.Email = "manager@tkt.com";
                 string userManagerPWD = "qweasd";
                 var chkUserManager = userManager.Create(uManager, userManagerPWD);

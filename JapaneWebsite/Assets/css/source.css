@@ -1,13 +1,14 @@
-﻿ *{
+﻿*{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 .header {
     margin: auto;
     padding-top: 30px;
     padding-bottom: 30px;
-    background-image: url('https://source.unsplash.com/1600x900/?sakura');
     color: white;
+    background-image:url(../img/japan-header-01.jpg)
 }
 
 .img-slider {
@@ -18,4 +19,8 @@
     width: 100%;
     padding: 60px 0;
     margin-top: 20px;
+}
+
+.asd{
+
 }
