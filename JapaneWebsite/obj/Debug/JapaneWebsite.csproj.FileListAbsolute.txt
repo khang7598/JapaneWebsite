@@ -587,3 +587,7 @@ C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\New folder\Japane
 C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\New folder\JapaneWebsite - 2\JapaneWebsite\JapaneWebsite\bin\PagedList.Mvc.dll
 C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\New folder\JapaneWebsite - 2\JapaneWebsite\JapaneWebsite\bin\PagedList.xml
 C:\Users\khang\source\repos\JapaneWebsite - Copy\GitHub Japane\New folder\JapaneWebsite - 2\JapaneWebsite\JapaneWebsite\bin\PagedList.Mvc.xml
+D:\Dev\JapaneWebsite\JapaneWebsite\bin\PagedList.dll
+D:\Dev\JapaneWebsite\JapaneWebsite\bin\PagedList.Mvc.dll
+D:\Dev\JapaneWebsite\JapaneWebsite\bin\PagedList.xml
+D:\Dev\JapaneWebsite\JapaneWebsite\bin\PagedList.Mvc.xml

@@ -19,6 +19,14 @@
         <AssociationConnector Association="JapaneDataModel.FK__Test__N__5165187F" ManuallyRouted="false" />
         <AssociationConnector Association="JapaneDataModel.FK__Question__IdTest__5441852A" ManuallyRouted="false" />
         <AssociationConnector Association="JapaneDataModel.FK__StudyPost__IdThe__3E52440B" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="JapaneDataModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="JapaneDataModel.AspNetRole" Width="1.5" PointX="8.75" PointY="2.5" />
+        <EntityTypeShape EntityType="JapaneDataModel.AspNetUserClaim" Width="1.5" PointX="13.25" PointY="1" />
+        <EntityTypeShape EntityType="JapaneDataModel.AspNetUserLogin" Width="1.5" PointX="13.25" PointY="3.75" />
+        <EntityTypeShape EntityType="JapaneDataModel.AspNetUser" Width="1.5" PointX="11" PointY="1.125" />
+        <AssociationConnector Association="JapaneDataModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="JapaneDataModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="JapaneDataModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
