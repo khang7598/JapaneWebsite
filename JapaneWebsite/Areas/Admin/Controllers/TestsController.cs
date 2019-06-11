@@ -10,6 +10,7 @@ using JapaneWebsite;
 
 namespace JapaneWebsite.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "MANAGER,ADMIN")]
     public class TestsController : Controller
     {
         private JapaneDataEntities db = new JapaneDataEntities();
@@ -93,7 +94,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
             ViewBag.N = new SelectList(db.Levels, "N", "N", test.N);
             return View(test);
         }
-
+        [Authorize(Roles = "ADMIN")]
         // GET: Admin/Tests/Delete/5
         public ActionResult Delete(int? id)
         {

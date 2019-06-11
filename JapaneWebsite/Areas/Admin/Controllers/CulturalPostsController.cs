@@ -10,8 +10,10 @@ using JapaneWebsite;
 
 namespace JapaneWebsite.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "MANAGER,ADMIN")]
     public class CulturalPostsController : Controller
     {
+       
         private JapaneDataEntities db = new JapaneDataEntities();
 
         // GET: Admin/CulturalPosts
@@ -97,7 +99,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
             ViewBag.IdThemePost = new SelectList(db.ThemeOfPosts, "IdThemePost", "Name", culturalPost.IdThemePost);
             return View(culturalPost);
         }
-
+        [Authorize(Roles = "ADMIN")]
         // GET: Admin/CulturalPosts/Delete/5
         public ActionResult Delete(int? id)
         {

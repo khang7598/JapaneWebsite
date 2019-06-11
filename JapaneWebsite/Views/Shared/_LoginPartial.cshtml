@@ -1,4 +1,9 @@
 ﻿@using Microsoft.AspNet.Identity
+<style>
+    .modal-backdrop {
+        display: none;
+    }
+</style>
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm"}))
@@ -12,7 +17,7 @@
 }
 else
 {
-    <div class="d-flex">
+    <div class="d-flex" >
         <button class="btn btn-success ml-sm-2 mr-sm-2" data-toggle="modal" data-target="#exampleModalCenter" data-whatever="Login">Đăng nhập<span class="sr-only"></span></button>
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">

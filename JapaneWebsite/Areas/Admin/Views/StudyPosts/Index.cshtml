@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<JapaneWebsite.StudyPost>
-
+@using PagedList;
 @{
     ViewBag.Title = "Index";
 }
@@ -35,18 +35,18 @@
 
         @foreach (var item in Model)
         {
-        <div class="container">
-            <div class="card-body shadow">
-                <img class="rounded float-left col-2" alt="Error" src="@item.Img" style="width:200px;height:150px" />
-                <h5 class="card-title">@item.Name</h5>
-                <p class="card-text">@item.Description</p>
-                <p>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.Date))</p>
-                @Html.ActionLink("Edit", "Edit", new { id = item.IdStudyPost }, new { @class = "btn btn-outline-success" }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IdStudyPost }, new { @class = "btn btn-outline-warning" }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IdStudyPost }, new { @class = "btn btn-outline-danger" })
+            <div class="container">
+                <div class="card-body shadow">
+                    <img class="rounded float-left col-2" alt="Error" src="@item.Img" style="width:200px;height:150px" />
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@item.Description</p>
+                    <p>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.Date))</p>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IdStudyPost }, new { @class = "btn btn-outline-success" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IdStudyPost }, new { @class = "btn btn-outline-warning" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdStudyPost }, new { @class = "btn btn-outline-danger" })
+                </div>
+                <hr />
             </div>
-            <hr/>
-        </div>                 
             @*<tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)
@@ -75,6 +75,26 @@
                     @Html.ActionLink("Delete", "Delete", new { id = item.IdStudyPost })
                 </td>
                 </tr>*@
+        }
+    </div>
+    <div class="text-center">
+        @if (((IPagedList)Model).PageNumber == 1)
+        {
+            @Html.ActionLink("<<", "Index", new { Page_No = ((IPagedList)Model).PageNumber }, new { @class = "page-item" })
+        }
+        else
+        {
+            @Html.ActionLink("<<", "Index", new { Page_No = ((IPagedList)Model).PageNumber - 1 })
+        }
+        @*| Trang @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 1 : ((IPagedList)Model).PageNumber) trong tổng số @(((IPagedList)Model).PageCount) (trang) |*@
+        Page @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 0 : ((IPagedList)Model).PageNumber)  of @(((IPagedList)Model).PageCount)
+        @if (((IPagedList)Model).PageNumber < ((IPagedList)Model).PageCount)
+        {
+            @Html.ActionLink(">>", "Index", new { Page_No = ((IPagedList)Model).PageNumber + 1 })
+        }
+        else
+        {
+            @Html.ActionLink(">>", "Index", new { Page_No = ((IPagedList)Model).PageNumber })
         }
     </div>
 </main>

@@ -7,18 +7,21 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using JapaneWebsite;
+using PagedList;
 
 namespace JapaneWebsite.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "MANAGER,ADMIN")]
     public class StudyPostsController : Controller
     {
         private JapaneDataEntities db = new JapaneDataEntities();
 
         // GET: Admin/StudyPosts
-        public ActionResult Index()
+        public ActionResult Index(int? Page_No, int? cateId, int Size_Of_Page = 3)
         {
-            var studyPosts = db.StudyPosts.Include(s => s.Level).Include(s => s.ThemeOfPost);
-            return View(studyPosts.ToList());
+            int Number_Of_Page = (Page_No) ?? 1;
+            var studyPosts = db.StudyPosts.Include(s => s.Level).Include(s => s.ThemeOfPost).OrderBy(s => s.IdStudyPost).ToPagedList(Number_Of_Page, Size_Of_Page);
+            return View(studyPosts);
         }
 
         // GET: Admin/StudyPosts/Details/5
@@ -97,7 +100,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
             ViewBag.IdThemePost = new SelectList(db.ThemeOfPosts, "IdThemePost", "Name", studyPost.IdThemePost);
             return View(studyPost);
         }
-
+        [Authorize(Roles = "ADMIN")]
         // GET: Admin/StudyPosts/Delete/5
         public ActionResult Delete(int? id)
         {

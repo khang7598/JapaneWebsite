@@ -10,8 +10,10 @@ using JapaneWebsite;
 
 namespace JapaneWebsite.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "MANAGER,ADMIN")]
     public class PlacesController : Controller
     {
+
         private JapaneDataEntities db = new JapaneDataEntities();
 
         // GET: Admin/Places
@@ -88,7 +90,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
             }
             return View(place);
         }
-
+        [Authorize(Roles = "ADMIN")]
         // GET: Admin/Places/Delete/5
         public ActionResult Delete(int? id)
         {

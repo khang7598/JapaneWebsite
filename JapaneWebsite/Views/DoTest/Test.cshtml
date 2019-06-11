@@ -21,7 +21,7 @@
 
 </head>
 <body>
-    <div style="text-align:center">
+    <div class="container shadow" style="text-align:center;margin-top:80px">
         <form>
             @for (var item = 0; item < list.Count; item++)
             {
@@ -43,7 +43,7 @@
                     </label>
                 </div>
             }
-            <input type="submit" formmethod="post" />
+            <input type="submit" formmethod="post" class="btn btn-outline-success"/>
         </form>
     </div>
     

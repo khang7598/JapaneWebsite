@@ -10,6 +10,7 @@ using JapaneWebsite;
 
 namespace JapaneWebsite.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "MANAGER,ADMIN")]
     public class ThemeOfPostsController : Controller
     {
         private JapaneDataEntities db = new JapaneDataEntities();
@@ -88,7 +89,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
             }
             return View(themeOfPost);
         }
-
+        [Authorize(Roles = "ADMIN")]
         // GET: Admin/ThemeOfPosts/Delete/5
         public ActionResult Delete(int? id)
         {
