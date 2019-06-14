@@ -4,66 +4,37 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Img)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Detail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Place.CityName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ThemeOfPost.Name)
-        </th>
-        <th></th>
-    </tr>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 ">
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-outline-primary" })
+    <div class="d-flex justify-content-between flex-wrap align-items-center pb-2 mb-3 border-bottom" style="margin-top:10px">
+        @foreach (var item in Model)
+        {
+            <div class="container">
+                <div class="card-body shadow">
+                    <img class="rounded float-left col-2" alt="Error" src="@item.Img" style="width:200px;height:150px" />
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@item.Description</p>
+                    <p class="card-text">@item.Place</p>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IdCultural }, new { @class = "btn btn-outline-success" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IdCultural }, new { @class = "btn btn-outline-warning" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdCultural }, new { @class = "btn btn-outline-danger" })
+                </div>
+                @*@Html.DisplayFor(modelItem => item.Name)
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Img)
-        </td>
-        <td>
-            @Html.Raw(item.Detail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Place.CityName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ThemeOfPost.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdCultural }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdCultural }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdCultural })
-        </td>
-    </tr>
-}
+                    @Html.DisplayFor(modelItem => item.Description)
 
-</table>
+                    @Html.DisplayFor(modelItem => item.Date)
+
+                    @Html.DisplayFor(modelItem => item.Img)
+
+                    @Html.Raw(item.Detail)
+
+                    @Html.DisplayFor(modelItem => item.Place.CityName)
+
+                    @Html.DisplayFor(modelItem => item.ThemeOfPost.Name)*@
+
+            </div>
+        }
+    </div>
+</main>

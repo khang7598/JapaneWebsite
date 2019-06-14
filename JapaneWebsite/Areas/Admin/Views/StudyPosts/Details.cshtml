@@ -5,8 +5,7 @@
 }
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
     <h1 class="text-center">Detail</h1>
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-        <div class="container shadow">
+    <div class="d-flex justify-content-between flex-wrap align-items-center pb-2 mb-3 border-bottom shadow">
 
             <hr />
             <dl class="dl-horizontal">
@@ -69,7 +68,6 @@
             </dl>
         </div>
 
-    </div>
     <div class="text-center">
         @Html.ActionLink("Edit", "Edit", new { id = Model.IdStudyPost }, new { @class = "btn btn-outline-success" }) |
         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-dark" })

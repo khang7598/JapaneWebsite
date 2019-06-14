@@ -3,22 +3,14 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_ShareLayout.cshtml";
 }
-
-<h2>Index</h2>
-
-
+<div style="margin-top:70px">
+    <h2>Kết quả tìm kiếm:</h2>
     <div class="card shadow">
-        <div class="card-header" style="height:50px;">
-            <h4>Học tiếng Nhật</h4>
-        </div>
         @Html.Partial("_ArticleHocTiengNhat", Model)
-
-        <div class="card-footer text-right" style="">
-
-            @Html.ActionLink("Xem thêm", "Index", "LearningPosts", null, new { @class = "card-link" })
-        </div>
     </div>
     <hr />
+</div>
+
     @*<div class="card shadow">
         <div class="card-header" style="height:50px">
             <h4>Văn hóa</h4>
