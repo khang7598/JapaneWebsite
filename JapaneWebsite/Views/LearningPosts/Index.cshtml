@@ -71,7 +71,6 @@
     {
         @Html.ActionLink("Previous page", "Index", new { Page_No = ((IPagedList)Model).PageNumber - 1 })
     }
-
 }
 
 Page @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 0 : ((IPagedList)Model).PageNumber) in @(((IPagedList)Model).PageCount) (pages)|

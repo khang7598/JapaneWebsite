@@ -1,0 +1,19 @@
+﻿@model JapaneWebsite.Models.ViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ShareLayout.cshtml";
+}
+
+<div style="margin-top:70px">
+    <h2>Kết quả tìm kiếm:</h2>
+    <div class="card shadow">
+        @foreach (var item in Model.studyPosts)
+        {
+            <a href="@Url.Action("Details", "LearningPosts",new {id = item.IdStudyPost})" class="list-group-item list-group-item-action">@item.Name</a>
+           
+
+        }
+    </div>
+    <hr />
+</div>
+

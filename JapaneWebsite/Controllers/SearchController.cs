@@ -54,5 +54,23 @@ namespace JapaneWebsite.Controllers
             return View(model);
         }
 
+        public List<StudyPost> GetAllGrammarN3(string name)
+        {
+            return db.StudyPosts.Where(s=>s.Name.Contains(name)).ToList();
+        }
+
+
+
+        public ActionResult GroupPost(string name)
+        {
+            ViewModel model = new ViewModel();
+            model.studyPosts = GetAllGrammarN3(name);
+
+
+
+
+            return View(model);
+        }
+
     }
 }
