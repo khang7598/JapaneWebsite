@@ -34,6 +34,7 @@ namespace JapaneWebsite.Controllers
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 =======
@@ -46,6 +47,9 @@ namespace JapaneWebsite.Controllers
 >>>>>>> parent of 55f86b7... update
 =======
         public List<CulturalPost> GetCulturalPostByThemeOfPost(int? id,string name)
+=======
+        public List<CulturalPost> GetCulturalPostByThemeOfPost(int? id)
+>>>>>>> parent of 55f86b7... update
 =======
         public List<CulturalPost> GetCulturalPostByThemeOfPost(int? id)
 >>>>>>> parent of 55f86b7... update
@@ -74,6 +78,7 @@ namespace JapaneWebsite.Controllers
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             
 =======
             model.culturalPosts = GetCulturalPostByThemeOfPost(id);
@@ -86,6 +91,10 @@ namespace JapaneWebsite.Controllers
             model.culturalPosts = GetCulturalPostByThemeOfPost(id,name);
             model.studyPosts = GetStudyPostByThemeOfPost(id,name);
 >>>>>>> parent of 1ded4e8... Revert "Update"
+=======
+            model.culturalPosts = GetCulturalPostByThemeOfPost(id);
+            model.studyPosts = GetStudyPostByThemeOfPost(id);
+>>>>>>> parent of 55f86b7... update
 =======
             model.culturalPosts = GetCulturalPostByThemeOfPost(id);
             model.studyPosts = GetStudyPostByThemeOfPost(id);
