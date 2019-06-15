@@ -27,7 +27,7 @@
         </dl>
     </div>
     <div class="text-center">
-        @Html.ActionLink("Edit", "Edit", new { id = Model.IdPlace }) |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Edit", "Edit", new { id = Model.IdPlace }, new { @class = "btn btn-outline-success" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-dark" })
     </div>
 </main>

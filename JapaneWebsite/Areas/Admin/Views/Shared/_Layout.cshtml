@@ -96,6 +96,9 @@
                 border-color: transparent;
                 box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
             }
+            .my1 {
+                color:white;
+            }
     </style>
 
 </head>
@@ -169,8 +172,8 @@
                     {
                         @Html.AntiForgeryToken()
                         <ul class="navbar-nav px-4 ">
-                            <li class="nav-item text-nowrap">@Html.ActionLink("Welcome " + User.Identity.GetUserName() + "!", "Index", "Manage", new { area = "" }, htmlAttributes: new { title = "Manage" })</li>
-                            <li class="nav-item text-nowrap"><a href="javascript:document.getElementById('logoutForm').submit()">Log Out</a></li>
+                            <li class="nav-item active">@Html.ActionLink("Welcome " + User.Identity.GetUserName() + "!", "Index", "Manage", new { area = "" }, htmlAttributes: new { title = "Manage" , @class = "my1"})</li>
+                            <li class="nav-item active"><a href="javascript:document.getElementById('logoutForm').submit()" class="my1">Log Out</a></li>
                         </ul>
                     }
                 }
