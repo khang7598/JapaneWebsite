@@ -31,8 +31,11 @@ namespace JapaneWebsite.Controllers
             return db.StudyPosts.Where(s=>s.IdThemePost == id).ToList();
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> parent of 55f86b7... update
         public List<CulturalPost> GetCulturalPostByThemeOfPost(int? id)
         {
 
@@ -56,7 +59,11 @@ namespace JapaneWebsite.Controllers
         
             ViewModel model = new ViewModel();
 <<<<<<< HEAD
+<<<<<<< HEAD
             
+=======
+            model.culturalPosts = GetCulturalPostByThemeOfPost(id);
+>>>>>>> parent of 55f86b7... update
 =======
             model.culturalPosts = GetCulturalPostByThemeOfPost(id);
 >>>>>>> parent of 55f86b7... update
