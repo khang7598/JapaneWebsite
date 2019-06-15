@@ -25,11 +25,12 @@ namespace JapaneWebsite.Controllers
             return db.ThemeOfPosts.Where(s => s.Name.Contains(SearchString)).ToList();
         }
 
-        public List<StudyPost> GetStudyPostByThemeOfPost(int? id, string name)
+        public List<StudyPost> GetStudyPostByThemeOfPost(int? id)
         {
             
-            return db.StudyPosts.Where(s=>s.IdThemePost == id || s.Name.Contains(name)).ToList();
+            return db.StudyPosts.Where(s=>s.IdThemePost == id).ToList();
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -45,9 +46,12 @@ namespace JapaneWebsite.Controllers
 >>>>>>> parent of 55f86b7... update
 =======
         public List<CulturalPost> GetCulturalPostByThemeOfPost(int? id,string name)
+=======
+        public List<CulturalPost> GetCulturalPostByThemeOfPost(int? id)
+>>>>>>> parent of 55f86b7... update
         {
 
-            return db.CulturalPosts.Where(s => s.IdThemePost == id || s.Name.Contains(name)).ToList();
+            return db.CulturalPosts.Where(s => s.IdThemePost == id).ToList();
         }
 >>>>>>> parent of 1ded4e8... Revert "Update"
         public ActionResult Index(string SearchString)
@@ -62,10 +66,11 @@ namespace JapaneWebsite.Controllers
             
             return View(model);
         }
-        public ActionResult IndexByTheme(int? id,string name)
+        public ActionResult IndexByTheme(int? id)
         {
         
             ViewModel model = new ViewModel();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -81,6 +86,10 @@ namespace JapaneWebsite.Controllers
             model.culturalPosts = GetCulturalPostByThemeOfPost(id,name);
             model.studyPosts = GetStudyPostByThemeOfPost(id,name);
 >>>>>>> parent of 1ded4e8... Revert "Update"
+=======
+            model.culturalPosts = GetCulturalPostByThemeOfPost(id);
+            model.studyPosts = GetStudyPostByThemeOfPost(id);
+>>>>>>> parent of 55f86b7... update
             return View(model);
         }
 
