@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using JapaneWebsite;
+using PagedList;
 
 namespace JapaneWebsite.Areas.Admin.Controllers
 {
@@ -17,9 +18,10 @@ namespace JapaneWebsite.Areas.Admin.Controllers
         private JapaneDataEntities db = new JapaneDataEntities();
 
         // GET: Admin/CulturalPosts
-        public ActionResult Index()
+        public ActionResult Index(int? Page_No, int? cateId, int Size_Of_Page = 4)
         {
-            var culturalPosts = db.CulturalPosts.Include(c => c.Place).Include(c => c.ThemeOfPost);
+            int Number_Of_Page = (Page_No) ?? 1;
+            var culturalPosts = db.CulturalPosts.Include(c => c.Place).Include(c => c.ThemeOfPost).OrderBy(c => c.IdCultural).ToPagedList(Number_Of_Page, Size_Of_Page); ;
             return View(culturalPosts.ToList());
         }
 
@@ -49,7 +51,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
         // POST: Admin/CulturalPosts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "IdCultural,Name,Description,Date,Img,Detail,IdPlace,IdThemePost")] CulturalPost culturalPost)
         {
@@ -85,7 +87,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
         // POST: Admin/CulturalPosts/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "IdCultural,Name,Description,Date,Img,Detail,IdPlace,IdThemePost")] CulturalPost culturalPost)
         {

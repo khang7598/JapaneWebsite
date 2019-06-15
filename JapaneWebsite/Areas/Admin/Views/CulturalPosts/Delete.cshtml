@@ -5,69 +5,12 @@
 }
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-    <h2 class="text-center">Delete</h2>
-    <h3 class="text-center">Are you sure you want to delete this post?</h3>
-    <div class="d-flex justify-content-between flex-wrap  align-items-center pb-2 mb-3 border-bottom shadow" style="margin-top:10px">
-            <hr />
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.Name)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Name)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Description)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Description)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Date)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Date)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Img)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Img)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Detail)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Detail)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Place.CityName)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Place.CityName)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.ThemeOfPost.Name)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.ThemeOfPost.Name)
-                </dd>
-
-            </dl>
+    <div class="d-flex justify-content-between flex-wrap  align-items-center pb-2 mb-3 border-bottom shadow" style="margin-top:10px">  
+        <div class="container">
+            <h2 class="text-center">Delete</h2>
+            <h3 class="text-center">Are you sure you want to delete this post?</h3>
         </div>
+    </div>
         <div class="text-center">
             @using (Html.BeginForm())
             {
