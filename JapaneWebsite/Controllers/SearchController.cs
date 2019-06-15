@@ -56,7 +56,7 @@ namespace JapaneWebsite.Controllers
 
         public List<StudyPost> GetAllGrammarN3(string name)
         {
-            return db.StudyPosts.Where(s=>s.Name.Contains(name)).ToList();
+            return db.StudyPosts.Where(s => s.Name.Contains(name)).OrderByDescending(s => s.IdStudyPost).ToList();
         }
 
 

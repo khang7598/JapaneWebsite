@@ -17,7 +17,7 @@ namespace JapaneWebsite.Controllers
         // GET: Home
         public List<StudyPost> GetStudyPost()
         {
-            return db.StudyPosts.ToList();
+            return db.StudyPosts.OrderByDescending(s => s.IdStudyPost).Take(3).ToList();
         }
         public List<ThemeOfPost> GetThemeOfPosts()
         {
@@ -25,7 +25,7 @@ namespace JapaneWebsite.Controllers
         }
         public List<CulturalPost> GetCulturalPosts()
         {
-            return db.CulturalPosts.ToList();
+            return db.CulturalPosts.OrderByDescending(s => s.IdCultural).Take(3).ToList();
         }
         public List<Test> GetTestPosts()
         {
