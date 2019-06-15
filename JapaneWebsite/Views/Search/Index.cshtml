@@ -3,7 +3,11 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_ShareLayout.cshtml";
 }
+<<<<<<< HEAD
+@*<<<<<<< HEAD
+=======
 
+>>>>>>> 55f86b71e3becb474db1fc198cec949bfb965c77
 
 <h2>Index</h2>
 
@@ -25,7 +29,18 @@
         <h4>Văn hóa</h4>
     </div>
     @Html.Partial("_ArticleVanHoaNhat", Model)
+<<<<<<< HEAD
+=======*@
+<div style="margin-top:70px">
+    <h2>Kết quả tìm kiếm:</h2>
+    <div class="card shadow">
+        @Html.Partial("_ArticleHocTiengNhat", Model)
+        @Html.Partial("_ArticleVanHoaNhat", Model)
+    </div>
+    <hr />
+=======
 
+>>>>>>> 55f86b71e3becb474db1fc198cec949bfb965c77
 </div>
 <
 
