@@ -7,26 +7,26 @@
 <h2>Index</h2>
 
 
-    <div class="card shadow">
-        <div class="card-header" style="height:50px;">
-            <h4>Học tiếng Nhật</h4>
-        </div>
-        @Html.Partial("_ArticleHocTiengNhat", Model)
-
-        <div class="card-footer text-right" style="">
-
-            @Html.ActionLink("Xem thêm", "Index", "LearningPosts", null, new { @class = "card-link" })
-        </div>
+<div class="card shadow">
+    <div class="card-header" style="height:50px;">
+        <h4>Học tiếng Nhật</h4>
     </div>
-    <hr />
-    @*<div class="card shadow">
-        <div class="card-header" style="height:50px">
-            <h4>Văn hóa</h4>
-        </div>
-        @Html.Partial("_ArticleVanHoaNhat", Model)
+    @Html.Partial("_ArticleHocTiengNhat", Model)
 
-        <div class="card-footer text-right" style="">
-            @Html.ActionLink("Xem thêm", "Index", "TraditionPosts", null, new { @class = "card-link" })
-        </div>
-    </div>*@
+    <div class="card-footer text-right" style="">
+        @Html.ActionLink("Xem thêm", "Index", "LearningPosts", null, new { @class = "card-link" })
+    </div>
+</div>
+
+<hr />
+<div class="card shadow">
+    <div class="card-header" style="height:50px">
+        <h4>Văn hóa</h4>
+    </div>
+    @Html.Partial("_ArticleVanHoaNhat", Model)
+
+    <div class="card-footer text-right" style="">
+        @Html.ActionLink("Xem thêm", "Index", "TraditionPosts", null, new { @class = "card-link" })
+    </div>
+</div>
 

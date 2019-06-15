@@ -20,6 +20,16 @@ namespace JapaneWebsite.Controllers
             return db.CulturalPosts.Where(s => s.Name.Contains(SearchString)).ToList();
         }
     
+        public List<ThemeOfPost> GetThemeOfPosts(string SearchString)
+        {
+            return db.ThemeOfPosts.Where(s => s.Name.Contains(SearchString)).ToList();
+        }
+
+        public List<StudyPost> GetStudyPostByThemeOfPost(int? id)
+        {
+            
+            return db.StudyPosts.Where(s=>s.IdThemePost == id).ToList();
+        }
 
         public ActionResult Index(string SearchString)
         {
@@ -30,7 +40,17 @@ namespace JapaneWebsite.Controllers
             ViewModel model = new ViewModel();
             model.studyPosts = GetStudyPost(SearchString);
             model.culturalPosts = GetCulturalPosts(SearchString);
+            
             return View(model);
         }
+        public ActionResult IndexByTheme(int? id)
+        {
+        
+            ViewModel model = new ViewModel();
+            
+            model.studyPosts = GetStudyPostByThemeOfPost(id);
+            return View(model);
+        }
+
     }
 }
