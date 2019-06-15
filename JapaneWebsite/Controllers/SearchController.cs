@@ -30,7 +30,15 @@ namespace JapaneWebsite.Controllers
             
             return db.StudyPosts.Where(s=>s.IdThemePost == id).ToList();
         }
+<<<<<<< HEAD
 
+=======
+        public List<CulturalPost> GetCulturalPostByThemeOfPost(int? id)
+        {
+
+            return db.CulturalPosts.Where(s => s.IdThemePost == id).ToList();
+        }
+>>>>>>> parent of 55f86b7... update
         public ActionResult Index(string SearchString)
         {
             if (String.IsNullOrEmpty(SearchString))
@@ -47,7 +55,11 @@ namespace JapaneWebsite.Controllers
         {
         
             ViewModel model = new ViewModel();
+<<<<<<< HEAD
             
+=======
+            model.culturalPosts = GetCulturalPostByThemeOfPost(id);
+>>>>>>> parent of 55f86b7... update
             model.studyPosts = GetStudyPostByThemeOfPost(id);
             return View(model);
         }
