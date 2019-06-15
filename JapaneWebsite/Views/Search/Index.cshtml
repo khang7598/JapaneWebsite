@@ -3,6 +3,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_ShareLayout.cshtml";
 }
+<<<<<<< HEAD
 
 <h2>Index</h2>
 
@@ -24,6 +25,21 @@
         <h4>Văn hóa</h4>
     </div>
     @Html.Partial("_ArticleVanHoaNhat", Model)
+=======
+<div style="margin-top:70px">
+    <h2>Kết quả tìm kiếm:</h2>
+    <div class="card shadow">
+        @Html.Partial("_ArticleHocTiengNhat", Model)
+    </div>
+    <hr />
+</div>
+
+    @*<div class="card shadow">
+        <div class="card-header" style="height:50px">
+            <h4>Văn hóa</h4>
+        </div>
+        @Html.Partial("_ArticleVanHoaNhat", Model)
+>>>>>>> c09c48de75cc4a9b097d23ca5ca2210d6812c748
 
     <div class="card-footer text-right" style="">
         @Html.ActionLink("Xem thêm", "Index", "TraditionPosts", null, new { @class = "card-link" })

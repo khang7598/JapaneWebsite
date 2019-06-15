@@ -17,7 +17,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
         private JapaneDataEntities db = new JapaneDataEntities();
 
         // GET: Admin/StudyPosts
-        public ActionResult Index(int? Page_No, int? cateId, int Size_Of_Page = 3)
+        public ActionResult Index(int? Page_No, int? cateId, int Size_Of_Page = 4)
         {
             int Number_Of_Page = (Page_No) ?? 1;
             var studyPosts = db.StudyPosts.Include(s => s.Level).Include(s => s.ThemeOfPost).OrderBy(s => s.IdStudyPost).ToPagedList(Number_Of_Page, Size_Of_Page);

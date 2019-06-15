@@ -3,15 +3,18 @@
     .modal-backdrop {
         display: none;
     }
+    .my {
+        color:black;
+    }
 </style>
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm"}))
     {
         @Html.AntiForgeryToken()  
-        <ul class="nav bg-light ml-sm-2 shadow">
-            <li class="nav-link active">@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
-            <li class="nav-link active"><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fas fa-sign-out-alt"></i></a></li>
+        <ul class="nav bg-light  ml-sm-2 shadow">
+            <li class="nav-link  active"> @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "my" })</li>
+            <li class="nav-link  active" ><a href="javascript:document.getElementById('logoutForm').submit()" style="color:red"><i class="fas fa-sign-out-alt"></i></a></li>
         </ul>
     }
 }
