@@ -19,8 +19,8 @@ namespace JapaneWebsite.Controllers
         public ActionResult Index(int? Page_No, int? cateId, int Size_Of_Page = 8)
         {
             int Number_Of_Page = (Page_No) ?? 1;
-            var culturalPosts = db.CulturalPosts.Include(c => c.Place).Include(c => c.ThemeOfPost).OrderBy(s => s.IdCultural).ToPagedList(Number_Of_Page, Size_Of_Page); ;
-            return View(culturalPosts.ToList());
+            var culturalPosts = db.CulturalPosts.Include(c => c.Place).Include(c => c.ThemeOfPost).OrderBy(s => s.IdCultural).ToPagedList(Number_Of_Page, Size_Of_Page);
+            return View(culturalPosts);
         }
 
         // GET: TraditionPosts/Details/5
