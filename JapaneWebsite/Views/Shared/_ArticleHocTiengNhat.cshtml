@@ -3,7 +3,6 @@
 @{
     if (Model != null)
     {
-        var i = 0;
         foreach (var item in Model.studyPosts)
         {
             <div class="card-body">
@@ -13,10 +12,7 @@
                 @*<a href="#" class="btn btn-primary">Tiếp tục</a>*@
                 @Html.ActionLink("Tiếp tục", "Details", "LearningPosts", new { id = @item.IdStudyPost }, new { @class = "btn btn-primary" })
             </div>
-            <hr />
-            i++;
-            if (i == 3)
-            { break; }
+            <hr />        
         }
     }
 }

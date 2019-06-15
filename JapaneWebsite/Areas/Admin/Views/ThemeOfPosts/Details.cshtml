@@ -4,31 +4,31 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <h1 class="text-center">Detail</h1>
+    <div class="d-flex justify-content-between flex-wrap align-items-center pb-2 mb-3 border-bottom shadow">
+        <hr />
+        <dl class="dl-horizontal text-center" style="margin-right:48%">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-<div>
-    <h4>ThemeOfPost</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Detail)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Detail)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Detail)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Detail)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdThemePost }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <div class="text-center">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.IdThemePost }, new { @class = "btn btn-outline-success" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-dark" })
+    </div>
+</main>
