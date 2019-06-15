@@ -1,0 +1,73 @@
+﻿@model JapaneWebsite.Question
+
+@{
+    ViewBag.Title = "Details";
+}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <h1 class="text-center">Detail</h1>
+    <div class="d-flex justify-content-between flex-wrap align-items-center pb-2 mb-3 border-bottom shadow">
+            <hr />
+            <dl class="dl-horizontal text-center" style="margin-right:48%">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Option1)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Option1)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Option2)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Option2)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Option3)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Option3)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Option4)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Option4)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Answer)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Answer)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Test.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Test.Name)
+                </dd>
+
+            </dl>
+        </div>
+        <div class="text-center">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.IdQuestion }, new { @class = "btn btn-outline-success" }) |
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-dark" })
+        </div>
+</main>

@@ -1,0 +1,74 @@
+﻿@model JapaneWebsite.CulturalPost
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <h1 class="text-center">Detail</h1>
+    <div class="d-flex justify-content-between flex-wrap  align-items-center pb-2 mb-3 border-bottom shadow">
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Date)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Date)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Img)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Img)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Detail)
+                </dt>
+
+                <dd>
+                    @Html.Raw(Model.Detail)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Place.CityName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Place.CityName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ThemeOfPost.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ThemeOfPost.Name)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.IdCultural }, new { @class = "btn btn-outline-success" }) |
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-dark" })
+        </p>
+</main>

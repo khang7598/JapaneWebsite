@@ -1,0 +1,113 @@
+﻿@model JapaneWebsite.CulturalPost
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@*<h2>Details</h2>
+
+<div>
+    <h4>CulturalPost</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Img)
+        </dt>
+
+        <dd>
+            <img src="@Model.Img" height="100px" width="100px" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Detail)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Detail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Place.CityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Place.CityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThemeOfPost.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThemeOfPost.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
+<nav aria-label="breadcrumb shadow">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="~/">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Cultural Post</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@Model.ThemeOfPost.Name</li>
+    </ol>
+</nav>
+<div class="container shadow mt-4">
+    <h1>@Html.DisplayFor(model => model.Name) </h1>
+    <p>@Html.DisplayFor(model => model.Date) </p>
+    <hr />
+    <dl class="text-center">
+        @*<dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>*@
+        @Html.Raw(Model.Detail)
+    </dl>
+    <hr />
+</div>
