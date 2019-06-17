@@ -4,26 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8e6684b592a64f09911d68df97d24d79" Name="Diagram1">
-        <EntityTypeShape EntityType="JapaneDataModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JapaneDataModel.AspNetRole" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="JapaneDataModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="JapaneDataModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JapaneDataModel.AspNetUser" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="JapaneDataModel.CulturalPost" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="JapaneDataModel.Level" Width="1.5" PointX="3.75" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="JapaneDataModel.Place" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="JapaneDataModel.Question" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="JapaneDataModel.StudyPost" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="JapaneDataModel.sysdiagram" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="JapaneDataModel.Test" Width="1.5" PointX="6" PointY="13.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="JapaneDataModel.ThemeOfPost" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+      <Diagram DiagramId="7ce0d1ffebbf4f29b53de4888e41d6e8" Name="Diagram1">
+        <EntityTypeShape EntityType="JapaneDataModel.AspNetRole" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JapaneDataModel.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JapaneDataModel.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="JapaneDataModel.AspNetUser" Width="1.5" PointX="8" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JapaneDataModel.CulturalPost" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JapaneDataModel.Level" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JapaneDataModel.Place" Width="1.5" PointX="0.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JapaneDataModel.Question" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JapaneDataModel.StudyPost" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JapaneDataModel.Test" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JapaneDataModel.ThemeOfPost" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JapaneDataModel.Volcabulary" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
         <AssociationConnector Association="JapaneDataModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="JapaneDataModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="JapaneDataModel.FK__CulturalP__IdPla__47DBAE45" ManuallyRouted="false" />
         <AssociationConnector Association="JapaneDataModel.FK__CulturalP__IdThe__48CFD27E" ManuallyRouted="false" />
         <AssociationConnector Association="JapaneDataModel.FK__StudyPost__N__3D5E1FD2" ManuallyRouted="false" />
         <AssociationConnector Association="JapaneDataModel.FK__Test__N__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="JapaneDataModel.FK__Volcabulary__N__3C34F16F" ManuallyRouted="false" />
         <AssociationConnector Association="JapaneDataModel.FK__Question__IdTest__5441852A" ManuallyRouted="false" />
         <AssociationConnector Association="JapaneDataModel.FK__StudyPost__IdThe__3E52440B" ManuallyRouted="false" />
         <AssociationConnector Association="JapaneDataModel.AspNetUserRoles" ManuallyRouted="false" />

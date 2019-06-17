@@ -19,6 +19,7 @@ namespace JapaneWebsite
         {
             this.StudyPosts = new HashSet<StudyPost>();
             this.Tests = new HashSet<Test>();
+            this.Volcabularies = new HashSet<Volcabulary>();
         }
     
         public string N { get; set; }
@@ -27,5 +28,7 @@ namespace JapaneWebsite
         public virtual ICollection<StudyPost> StudyPosts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Test> Tests { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Volcabulary> Volcabularies { get; set; }
     }
 }

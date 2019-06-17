@@ -1,0 +1,48 @@
+﻿@model IEnumerable<JapaneWebsite.Volcabulary>
+@using PagedList;
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div style="margin-top:70px">
+
+                <div class="card shadow">
+                    @foreach (var item in Model)
+                    {
+                        <p class="list-group-item list-group-item-action"> @item.Kanji -  @item.Furigana -  @item.Meaning</p>
+
+
+                    }
+                </div>
+                <hr />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@{
+    if (((IPagedList)Model).PageNumber == 1)
+    {
+        @Html.ActionLink("Previous page", "Index", new { Page_No = ((IPagedList)Model).PageNumber })
+    }
+    else
+    {
+        @Html.ActionLink("Previous page", "Index", new { Page_No = ((IPagedList)Model).PageNumber - 1 })
+    }
+}
+
+Page @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 0 : ((IPagedList)Model).PageNumber) in @(((IPagedList)Model).PageCount) (pages)|
+@{
+    if (((IPagedList)Model).PageNumber >= ((IPagedList)Model).PageCount)
+    {
+        @Html.ActionLink("Next page", "Index", new { Page_No = ((IPagedList)Model).PageNumber })
+    }
+    else
+    {
+        @Html.ActionLink("Next page", "Index", new { Page_No = ((IPagedList)Model).PageNumber + 1 })
+    }
+
+}

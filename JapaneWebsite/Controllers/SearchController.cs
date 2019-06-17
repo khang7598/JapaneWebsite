@@ -33,6 +33,16 @@ namespace JapaneWebsite.Controllers
             return db.CulturalPosts.Where(s => s.IdThemePost == id||s.Name.Contains(name)).ToList();
         }
 
+        public List<Volcabulary> GetVolcabularies(string name)
+        {
+
+            return db.Volcabularies.Where(s=>s.Kanji.Contains(name) || s.Furigana.Contains(name) || s.Meaning.Contains(name)).ToList();
+        }
+        public List<Volcabulary> GetVolcabulariesByLevel(string name)
+        {
+
+            return db.Volcabularies.Where(s=>s.N.Contains(name)).ToList();
+        }
         public ActionResult Index(string SearchString)
         {
             if (String.IsNullOrEmpty(SearchString))
@@ -42,7 +52,17 @@ namespace JapaneWebsite.Controllers
             ViewModel model = new ViewModel();
             model.studyPosts = GetStudyPost(SearchString);
             model.culturalPosts = GetCulturalPosts(SearchString);
-            
+            model.volcabularies = GetVolcabularies(SearchString);
+            return View(model);
+        }
+        public ActionResult IndexByLevel(string SearchString)
+        {
+            if (String.IsNullOrEmpty(SearchString))
+            {
+                SearchString = "";
+            }
+            ViewModel model = new ViewModel();
+            model.volcabularies = GetVolcabulariesByLevel(SearchString);
             return View(model);
         }
         public ActionResult IndexByTheme(int? id,string name)

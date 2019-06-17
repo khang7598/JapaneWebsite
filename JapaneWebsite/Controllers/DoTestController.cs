@@ -37,5 +37,11 @@ namespace JapaneWebsite.Controllers
             model.questions = GetQuestion(id);
             return View(model);
         }
+
+        public ActionResult submit()
+        {
+            return View();
+        }
+
     }
 }

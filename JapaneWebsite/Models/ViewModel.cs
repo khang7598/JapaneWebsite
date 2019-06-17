@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +13,8 @@ namespace JapaneWebsite.Models
         public IEnumerable<CulturalPost> culturalPosts { get; set; }
         public IEnumerable<Test> Tests { get; set; }
         public IEnumerable<Question> questions { get; set; }
-
+        public IEnumerable<Volcabulary> volcabularies { get; set; }
+        public PagedList.IPagedList<Volcabulary> volcabularyPagelist { set; get; }
     }
     
 }

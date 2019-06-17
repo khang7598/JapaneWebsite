@@ -206,6 +206,7 @@
     <Compile Include="Areas\Admin\Controllers\StudyPostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TestsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ThemeOfPostsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\VolcabulariesController.cs" />
     <Compile Include="AspNetRole.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -225,10 +226,8 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\TraditionPostsController.cs" />
+    <Compile Include="Controllers\WordsController.cs" />
     <Compile Include="CulturalPost.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DatabaseModel.Context.cs">
@@ -267,13 +266,13 @@
     <Compile Include="StudyPost.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Test.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ThemeOfPost.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Volcabulary.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -1355,6 +1354,11 @@
     <Content Include="DatabaseModel.edmx.diagram">
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\Volcabularies\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Volcabularies\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Volcabularies\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Volcabularies\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Volcabularies\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1433,10 +1437,14 @@
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Search\IndexByTheme.cshtml" />
     <Content Include="Views\Search\GroupPost.cshtml" />
+    <Content Include="Views\Words\Index.cshtml" />
+    <Content Include="Views\Shared\_ArticleTuVung.cshtml" />
+    <Content Include="Views\Search\IndexByLevel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Assets\js\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

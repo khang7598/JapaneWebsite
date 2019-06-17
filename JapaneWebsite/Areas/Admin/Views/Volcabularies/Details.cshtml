@@ -1,0 +1,51 @@
+﻿@model JapaneWebsite.Volcabulary
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_ShareLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Volcabulary</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Kanji)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kanji)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Furigana)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Furigana)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Meaning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meaning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level.N)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level.N)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdVol }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

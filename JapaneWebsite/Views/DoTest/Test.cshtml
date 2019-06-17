@@ -4,11 +4,13 @@
     <style>
         label {
             display: block;
+            padding-left:20px;
         }
 
         input[type=submit] {
             margin-top: 15px;
         }
+
     </style>
     @{
         var count = 0;
@@ -21,14 +23,14 @@
 
 </head>
 <body>
-    <div class="container shadow" style="text-align:center;margin-top:80px">
+    <div class="container shadow" style="text-align:left;margin-top:80px">
         <form>
             @for (var item = 0; item < list.Count; item++)
             {
 
                 count++;
                 <div class="question">
-                    <p><strong>@count. @list[item].Name</strong></p>
+                    <p class="alert alert-primary"><strong>@count. @list[item].Name</strong></p>
                     <label>
                         <input type="radio" name="@list[item].Name" value="@list[item].Option1">@list[item].Option1
                     </label>
@@ -57,36 +59,52 @@
         function markIncorrect(el) {
             var img = new Image();
             img.src = 'https://cdn2.iconfinder.com/data/icons/onebit/PNG/onebit_33.png';
+            img.style.height = '20px';
+            img.style.width = '20px';
             el.append(img);
         }
 
         function markCorrect(el) {
             var img = new Image();
             img.src = 'https://cdn2.iconfinder.com/data/icons/onebit/PNG/onebit_34.png';
+            img.style.height = '20px';
+            img.style.width = '20px';
             el.append(img);
+            
         }
         $("form").on("submit", function (e) {
             e.preventDefault();
             clearAnswers();
-
+            var point = 0;
+            var quesCount = 0;
             $questions = $(".question");
             $questions.each(function () {
                 var answer = $(this).find("input:checked"),
                     key = answer.attr("name"),
                     val = answer.attr("value");
-
+                
                 if (answer.length === 0) {
                     markIncorrect($(this).find("p"));
+                    quesCount++;
                 } else if (answers[key] !== val) {
                     markIncorrect($(this).find("p"));
+                    quesCount++
                 } else {
                     markCorrect(answer.parent());
+                    quesCount++;
+                    point++;
                 }
+              
             });
+            setTimeout(function () {
+                alert("Bạn đã đúng " + point + " trên " + quesCount);
+            }, 100);
+               
         });
         var answers = {
             "@list[0].Name": "@list[0].Answer"
         };
+        
         @for(var g = 1; g < list.Count; g++)
         {
             <text>

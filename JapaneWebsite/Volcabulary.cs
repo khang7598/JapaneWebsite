@@ -12,11 +12,14 @@ namespace JapaneWebsite
     using System;
     using System.Collections.Generic;
     
-    public partial class C__MigrationHistory
+    public partial class Volcabulary
     {
-        public string MigrationId { get; set; }
-        public string ContextKey { get; set; }
-        public byte[] Model { get; set; }
-        public string ProductVersion { get; set; }
+        public int IdVol { get; set; }
+        public string Kanji { get; set; }
+        public string Furigana { get; set; }
+        public string Meaning { get; set; }
+        public string N { get; set; }
+    
+        public virtual Level Level { get; set; }
     }
 }

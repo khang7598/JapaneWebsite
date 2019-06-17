@@ -25,7 +25,6 @@ namespace JapaneWebsite
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
@@ -35,8 +34,8 @@ namespace JapaneWebsite
         public virtual DbSet<Place> Places { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<StudyPost> StudyPosts { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Test> Tests { get; set; }
         public virtual DbSet<ThemeOfPost> ThemeOfPosts { get; set; }
+        public virtual DbSet<Volcabulary> Volcabularies { get; set; }
     }
 }
