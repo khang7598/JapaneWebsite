@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<JapaneWebsite.CulturalPost>
-
+@using PagedList;
 @{
     ViewBag.Title = "Index";
 }
@@ -35,6 +35,26 @@
                     @Html.DisplayFor(modelItem => item.ThemeOfPost.Name)*@
 
             </div>
+        }
+    </div>
+    <div class="text-center">
+        @if (((IPagedList)Model).PageNumber == 1)
+        {
+            @Html.ActionLink("<<", "Index", new { Page_No = ((IPagedList)Model).PageNumber }, new { @class = "page-item" })
+        }
+        else
+        {
+            @Html.ActionLink("<<", "Index", new { Page_No = ((IPagedList)Model).PageNumber - 1 })
+        }
+        @*| Trang @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 1 : ((IPagedList)Model).PageNumber) trong tổng số @(((IPagedList)Model).PageCount) (trang) |*@
+        Page @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 0 : ((IPagedList)Model).PageNumber)  of @(((IPagedList)Model).PageCount)
+        @if (((IPagedList)Model).PageNumber < ((IPagedList)Model).PageCount)
+        {
+            @Html.ActionLink(">>", "Index", new { Page_No = ((IPagedList)Model).PageNumber + 1 })
+        }
+        else
+        {
+            @Html.ActionLink(">>", "Index", new { Page_No = ((IPagedList)Model).PageNumber })
         }
     </div>
 </main>

@@ -22,7 +22,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
         {
             int Number_Of_Page = (Page_No) ?? 1;
             var culturalPosts = db.CulturalPosts.Include(c => c.Place).Include(c => c.ThemeOfPost).OrderBy(c => c.IdCultural).ToPagedList(Number_Of_Page, Size_Of_Page); ;
-            return View(culturalPosts.ToList());
+            return View(culturalPosts);
         }
 
         // GET: Admin/CulturalPosts/Details/5
