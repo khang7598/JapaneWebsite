@@ -16,7 +16,9 @@
     height: 533.7px;
 }
 .footer {
+    bottom:0;
     width: 100%;
+    padding-bottom:0 0;
     padding: 60px 0;
     margin-top: 20px;
 }
