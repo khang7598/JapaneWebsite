@@ -29,7 +29,7 @@ namespace JapaneWebsite.Controllers
         }
         public List<Test> GetTestPosts()
         {
-            return db.Tests.ToList();
+            return db.Tests.OrderByDescending(s => s.IdTest).Take(3).ToList();
         }
 
         public ActionResult Index()

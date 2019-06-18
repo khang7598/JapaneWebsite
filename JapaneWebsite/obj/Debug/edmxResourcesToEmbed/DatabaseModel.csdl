@@ -73,7 +73,7 @@
     <Property Name="N" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
     <NavigationProperty Name="StudyPosts" Relationship="Self.FK__StudyPost__N__3D5E1FD2" FromRole="Level" ToRole="StudyPost" />
     <NavigationProperty Name="Tests" Relationship="Self.FK__Test__N__5165187F" FromRole="Level" ToRole="Test" />
-    <NavigationProperty Name="Volcabularies" Relationship="Self.FK__Volcabulary__N__3C34F16F" FromRole="Level" ToRole="Volcabulary" />
+    <NavigationProperty Name="Volcabularies" Relationship="JapaneDataModel.FK__Volcabulary__N__5CD6CB2B" FromRole="Level" ToRole="Volcabulary" />
   </EntityType>
   <EntityType Name="Place">
     <Key>
@@ -133,17 +133,6 @@
     <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="CulturalPosts" Relationship="Self.FK__CulturalP__IdThe__48CFD27E" FromRole="ThemeOfPost" ToRole="CulturalPost" />
     <NavigationProperty Name="StudyPosts" Relationship="Self.FK__StudyPost__IdThe__3E52440B" FromRole="ThemeOfPost" ToRole="StudyPost" />
-  </EntityType>
-  <EntityType Name="Volcabulary">
-    <Key>
-      <PropertyRef Name="IdVol" />
-    </Key>
-    <Property Name="IdVol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Kanji" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Furigana" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Meaning" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="N" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-    <NavigationProperty Name="Level" Relationship="Self.FK__Volcabulary__N__3C34F16F" FromRole="Volcabulary" ToRole="Level" />
   </EntityType>
   <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
     <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
@@ -221,18 +210,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Volcabulary__N__3C34F16F">
-    <End Role="Level" Type="Self.Level" Multiplicity="0..1" />
-    <End Role="Volcabulary" Type="Self.Volcabulary" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Level">
-        <PropertyRef Name="N" />
-      </Principal>
-      <Dependent Role="Volcabulary">
-        <PropertyRef Name="N" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__Question__IdTest__5441852A">
     <End Role="Test" Type="Self.Test" Multiplicity="1" />
     <End Role="Question" Type="Self.Question" Multiplicity="*" />
@@ -273,7 +250,6 @@
     <EntitySet Name="StudyPosts" EntityType="Self.StudyPost" />
     <EntitySet Name="Tests" EntityType="Self.Test" />
     <EntitySet Name="ThemeOfPosts" EntityType="Self.ThemeOfPost" />
-    <EntitySet Name="Volcabularies" EntityType="Self.Volcabulary" />
     <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
@@ -298,10 +274,6 @@
       <End Role="Level" EntitySet="Levels" />
       <End Role="Test" EntitySet="Tests" />
     </AssociationSet>
-    <AssociationSet Name="FK__Volcabulary__N__3C34F16F" Association="Self.FK__Volcabulary__N__3C34F16F">
-      <End Role="Level" EntitySet="Levels" />
-      <End Role="Volcabulary" EntitySet="Volcabularies" />
-    </AssociationSet>
     <AssociationSet Name="FK__Question__IdTest__5441852A" Association="Self.FK__Question__IdTest__5441852A">
       <End Role="Test" EntitySet="Tests" />
       <End Role="Question" EntitySet="Questions" />
@@ -314,5 +286,55 @@
       <End Role="AspNetRoles" EntitySet="AspNetRoles" />
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
     </AssociationSet>
+    <EntitySet Name="C__MigrationHistory" EntityType="JapaneDataModel.C__MigrationHistory" />
+    <EntitySet Name="sysdiagrams" EntityType="JapaneDataModel.sysdiagram" />
+    <EntitySet Name="Volcabularies" EntityType="JapaneDataModel.Volcabulary" />
+    <AssociationSet Name="FK__Volcabulary__N__5CD6CB2B" Association="JapaneDataModel.FK__Volcabulary__N__5CD6CB2B">
+      <End Role="Level" EntitySet="Levels" />
+      <End Role="Volcabulary" EntitySet="Volcabularies" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Volcabulary">
+    <Key>
+      <PropertyRef Name="IdVol" />
+    </Key>
+    <Property Name="IdVol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kanji" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Furigana" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Meaning" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="N" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Level" Relationship="JapaneDataModel.FK__Volcabulary__N__5CD6CB2B" FromRole="Volcabulary" ToRole="Level" />
+  </EntityType>
+  <Association Name="FK__Volcabulary__N__5CD6CB2B">
+    <End Type="JapaneDataModel.Level" Role="Level" Multiplicity="0..1" />
+    <End Type="JapaneDataModel.Volcabulary" Role="Volcabulary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Level">
+        <PropertyRef Name="N" />
+      </Principal>
+      <Dependent Role="Volcabulary">
+        <PropertyRef Name="N" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

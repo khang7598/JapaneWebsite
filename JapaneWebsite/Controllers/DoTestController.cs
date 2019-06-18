@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace JapaneWebsite.Controllers
 {
+    [Authorize(Roles = "MANAGER,ADMIN,MEMBER")]
     public class DoTestController : Controller
     {
         private JapaneDataEntities db = new JapaneDataEntities();

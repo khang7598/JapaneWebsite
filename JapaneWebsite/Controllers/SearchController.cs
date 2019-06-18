@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace JapaneWebsite.Controllers
 {
@@ -80,6 +81,7 @@ namespace JapaneWebsite.Controllers
         }
         public ActionResult IndexByTheme(int? id,string name)
         {
+<<<<<<< HEAD
             
             ViewModel model = new ViewModel();
             model.culturalPosts = GetCulturalByThemeOfPost(id, name);
@@ -89,6 +91,15 @@ namespace JapaneWebsite.Controllers
         }
 
         public List<StudyPost> GetAllGrammarN(string name)
+=======
+            ViewModel model = new ViewModel();
+            model.culturalPosts = GetCulturalByThemeOfPost(id, name);
+            model.studyPosts = GetStudyPostByThemeOfPost(id, name);
+            return View(model);
+        }
+
+        public List<StudyPost> GetAllGrammar(string name)
+>>>>>>> 14004035cb1c34c002dd2dfa7c336a09a8385745
         {
             return db.StudyPosts.Where(s => s.Name.Contains(name)).OrderByDescending(s => s.IdStudyPost).ToList();
         }
@@ -98,7 +109,11 @@ namespace JapaneWebsite.Controllers
         public ActionResult GroupPost(string name)
         {
             ViewModel model = new ViewModel();
+<<<<<<< HEAD
             model.studyPosts = GetAllGrammarN(name);
+=======
+            model.studyPosts = GetAllGrammar(name);
+>>>>>>> 14004035cb1c34c002dd2dfa7c336a09a8385745
             return View(model);
         }
 
