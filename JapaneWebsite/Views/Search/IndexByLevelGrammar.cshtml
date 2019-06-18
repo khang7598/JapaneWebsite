@@ -1,0 +1,39 @@
+﻿@model IEnumerable<JapaneWebsite.StudyPost>
+@using PagedList;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ShareLayout.cshtml";
+}
+
+<div style="margin-top:70px">
+    <h2>Kết quả tìm kiếm:</h2>
+    <div class="card shadow">
+
+        @Html.Partial("_ArticleHocTiengNhat01", Model)
+    </div>
+    <hr />
+</div>
+
+@{
+    if (((IPagedList)Model).PageNumber == 1)
+    {
+        @Html.ActionLink("Previous page", "IndexByLevelGrammar", new { Page_No = ((IPagedList)Model).PageNumber, SearchString = ViewBag.SearchString })
+    }
+    else
+    {
+        @Html.ActionLink("Previous page", "IndexByLevelGrammar", new { Page_No = ((IPagedList)Model).PageNumber - 1, SearchString = ViewBag.SearchString })
+    }
+}
+
+Page @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 0 : ((IPagedList)Model).PageNumber) in @(((IPagedList)Model).PageCount) (pages)|
+@{
+    if (((IPagedList)Model).PageNumber >= ((IPagedList)Model).PageCount)
+    {
+        @Html.ActionLink("Next page", "IndexByLevelGrammar", new { Page_No = ((IPagedList)Model).PageNumber, SearchString = ViewBag.SearchString })
+    }
+    else
+    {
+        @Html.ActionLink("Next page", "IndexByLevelGrammar", new { Page_No = ((IPagedList)Model).PageNumber + 1, SearchString = ViewBag.SearchString })
+    }
+
+}

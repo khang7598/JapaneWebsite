@@ -28,7 +28,10 @@ namespace JapaneWebsite.Controllers
         // GET: Words
         public ActionResult Index(int? Page_No, int Size_Of_Page = 10)
         {
+
             int Number_Of_Page = (Page_No) ?? 1;
+
+
             var wordPosts = db.Volcabularies.Include(s => s.Level).OrderBy(s => s.IdVol).ToPagedList(Number_Of_Page, Size_Of_Page);
             return View(wordPosts);
         }

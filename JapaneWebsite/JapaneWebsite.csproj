@@ -1347,6 +1347,11 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Areas\Admin\Views\Volcabularies\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Volcabularies\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Volcabularies\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Volcabularies\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Volcabularies\Index.cshtml" />
     <EntityDeploy Include="DatabaseModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DatabaseModel.Designer.cs</LastGenOutput>
@@ -1354,11 +1359,6 @@
     <Content Include="DatabaseModel.edmx.diagram">
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\Volcabularies\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Volcabularies\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Volcabularies\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Volcabularies\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Volcabularies\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1440,6 +1440,8 @@
     <Content Include="Views\Words\Index.cshtml" />
     <Content Include="Views\Shared\_ArticleTuVung.cshtml" />
     <Content Include="Views\Search\IndexByLevel.cshtml" />
+    <Content Include="Views\Search\IndexByLevelGrammar.cshtml" />
+    <Content Include="Views\Shared\_ArticleHocTiengNhat01.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

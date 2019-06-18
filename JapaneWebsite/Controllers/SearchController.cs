@@ -1,4 +1,5 @@
 ﻿using JapaneWebsite.Models;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,26 +56,39 @@ namespace JapaneWebsite.Controllers
             model.volcabularies = GetVolcabularies(SearchString);
             return View(model);
         }
-        public ActionResult IndexByLevel(string SearchString)
+        public ActionResult IndexByLevel(string SearchString,int? Page_No, int Size_Of_Page = 10)
         {
             if (String.IsNullOrEmpty(SearchString))
             {
                 SearchString = "";
             }
-            ViewModel model = new ViewModel();
-            model.volcabularies = GetVolcabulariesByLevel(SearchString);
-            return View(model);
+            ViewBag.SearchString = SearchString;
+            int Number_Of_Page = (Page_No) ?? 1;
+            var dba = db.Volcabularies.Where(s => s.N.Contains(SearchString)).OrderBy(s => s.IdVol).ToPagedList(Number_Of_Page, Size_Of_Page);
+            return View(dba);
+        }
+        public ActionResult IndexByLevelGrammar(string SearchString, int? Page_No, int Size_Of_Page = 10)
+        {
+            if (String.IsNullOrEmpty(SearchString))
+            {
+                SearchString = "";
+            }
+            ViewBag.SearchString = SearchString;
+            int Number_Of_Page = (Page_No) ?? 1;
+            var dba = db.StudyPosts.Where(s => s.N.Contains(SearchString)).OrderBy(s => s.IdStudyPost).ToPagedList(Number_Of_Page, Size_Of_Page);
+            return View(dba);
         }
         public ActionResult IndexByTheme(int? id,string name)
         {
-        
+            
             ViewModel model = new ViewModel();
             model.culturalPosts = GetCulturalByThemeOfPost(id, name);
             model.studyPosts = GetStudyPostByThemeOfPost(id,name);
+            //model.studyPostsPagelist=db.StudyPosts.OrderBy(s=>s.IdStudyPost)
             return View(model);
         }
 
-        public List<StudyPost> GetAllGrammarN3(string name)
+        public List<StudyPost> GetAllGrammarN(string name)
         {
             return db.StudyPosts.Where(s => s.Name.Contains(name)).OrderByDescending(s => s.IdStudyPost).ToList();
         }
@@ -84,11 +98,7 @@ namespace JapaneWebsite.Controllers
         public ActionResult GroupPost(string name)
         {
             ViewModel model = new ViewModel();
-            model.studyPosts = GetAllGrammarN3(name);
-
-
-
-
+            model.studyPosts = GetAllGrammarN(name);
             return View(model);
         }
 
