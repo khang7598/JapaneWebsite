@@ -88,6 +88,8 @@
             CKEDITOR.instances.editor1.setData(model => model.Detail, function () {
                 this.checkDirty();  // true
             });
+        </script>
+        <script>
             $('#btnSelectImage').on('click', function (e) {
                 e.preventDefault();
                 var finder = new CKFinder();
@@ -97,7 +99,7 @@
                 finder.popup();
             });
         </script>
-        </div>
+    </div>
         <div class="text-center">
             @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-dark" })
         </div>

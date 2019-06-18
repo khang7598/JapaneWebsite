@@ -45,8 +45,11 @@
                     </label>
                 </div>
             }
-            <input type="submit" formmethod="post" class="btn btn-outline-success"/>
-        </form>
+            <div id="content" class="text-center"></div>
+            <div class="text-center" style="padding:10px">
+                <input type="submit" formmethod="post" class="btn btn-outline-success" />
+            </div>
+            </form>
     </div>
     
     <script>
@@ -97,7 +100,7 @@
               
             });
             setTimeout(function () {
-                alert("Bạn đã đúng " + point + " trên " + quesCount);
+                $("#content").html("Bạn đã đúng " + point + " trên " + quesCount);
             }, 100);
                
         });
