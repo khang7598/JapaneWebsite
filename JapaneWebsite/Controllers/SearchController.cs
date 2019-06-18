@@ -66,13 +66,12 @@ namespace JapaneWebsite.Controllers
             model.volcabularies = GetVolcabulariesByLevel(SearchString);
             return View(model);
         }
-        public ActionResult IndexByTheme(int? id,string name)
+        public ActionResult IndexByTheme(int? id,string name, int? Page_No, int Size_Of_Page = 5)
         {
-        
+            int Number_Of_Page = (Page_No) ?? 1;
             ViewModel model = new ViewModel();
-
             model.culturalPosts = GetCulturalByThemeOfPost(id, name);
-            model.studyPosts = GetStudyPostByThemeOfPost(id,name);
+            model.studyPosts = GetStudyPostByThemeOfPost(id, name);
             return View(model);
         }
 
