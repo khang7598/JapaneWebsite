@@ -79,8 +79,9 @@ namespace JapaneWebsite.Controllers
             var dba = db.StudyPosts.Where(s => s.N.Contains(SearchString)).OrderBy(s => s.IdStudyPost).ToPagedList(Number_Of_Page, Size_Of_Page);
             return View(dba);
         }
-        public ActionResult IndexByTheme(int? id,string name)
+        public ActionResult IndexByTheme(int? id,string name, int? Page_No, int Size_Of_Page = 5)
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             
             ViewModel model = new ViewModel();
@@ -92,6 +93,9 @@ namespace JapaneWebsite.Controllers
 
         public List<StudyPost> GetAllGrammarN(string name)
 =======
+=======
+            int Number_Of_Page = (Page_No) ?? 1;
+>>>>>>> parent of 1400403... Update
             ViewModel model = new ViewModel();
             model.culturalPosts = GetCulturalByThemeOfPost(id, name);
             model.studyPosts = GetStudyPostByThemeOfPost(id, name);
