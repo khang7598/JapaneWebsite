@@ -14,8 +14,7 @@ namespace JapaneWebsite.Models
         public IEnumerable<Test> Tests { get; set; }
         public IEnumerable<Question> questions { get; set; }
         public IEnumerable<Volcabulary> volcabularies { get; set; }
-        public IPagedList<Volcabulary> volcabularyPagelist { set; get; }
-        public IPagedList<StudyPost> studyPostsPagelist { set; get; }
+        public PagedList.IPagedList<Volcabulary> volcabularyPagelist { set; get; }
     }
     
 }

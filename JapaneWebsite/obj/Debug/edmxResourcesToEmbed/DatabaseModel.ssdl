@@ -153,11 +153,7 @@
     <Property Name="Meaning" Type="ntext" Nullable="false" />
     <Property Name="N" Type="char" MaxLength="2" />
   </EntityType>
-<<<<<<< HEAD
-  <Association Name="FK__CulturalP__IdPla__47DBAE45">
-=======
   <Association Name="FK__CulturalP__IdPla__1A14E395">
->>>>>>> 14004035cb1c34c002dd2dfa7c336a09a8385745
     <End Role="Place" Type="Self.Place" Multiplicity="0..1" />
     <End Role="CulturalPost" Type="Self.CulturalPost" Multiplicity="*" />
     <ReferentialConstraint>
@@ -169,7 +165,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CulturalP__IdThe__48CFD27E">
+  <Association Name="FK__CulturalP__IdThe__1B0907CE">
     <End Role="ThemeOfPost" Type="Self.ThemeOfPost" Multiplicity="0..1" />
     <End Role="CulturalPost" Type="Self.CulturalPost" Multiplicity="*" />
     <ReferentialConstraint>
@@ -181,7 +177,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Question__IdTest__5441852A">
+  <Association Name="FK__Question__IdTest__20C1E124">
     <End Role="Test" Type="Self.Test" Multiplicity="1" />
     <End Role="Question" Type="Self.Question" Multiplicity="*" />
     <ReferentialConstraint>
@@ -193,7 +189,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__StudyPost__IdThe__3E52440B">
+  <Association Name="FK__StudyPost__IdThe__15502E78">
     <End Role="ThemeOfPost" Type="Self.ThemeOfPost" Multiplicity="0..1" />
     <End Role="StudyPost" Type="Self.StudyPost" Multiplicity="*" />
     <ReferentialConstraint>
@@ -205,7 +201,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__StudyPost__N__3D5E1FD2">
+  <Association Name="FK__StudyPost__N__145C0A3F">
     <End Role="Level" Type="Self.Level" Multiplicity="0..1" />
     <End Role="StudyPost" Type="Self.StudyPost" Multiplicity="*" />
     <ReferentialConstraint>
@@ -217,7 +213,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Test__N__5165187F">
+  <Association Name="FK__Test__N__1DE57479">
     <End Role="Level" Type="Self.Level" Multiplicity="1" />
     <End Role="Test" Type="Self.Test" Multiplicity="*" />
     <ReferentialConstraint>
@@ -313,31 +309,27 @@
     <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ThemeOfPost" EntityType="Self.ThemeOfPost" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Volcabulary" EntityType="Self.Volcabulary" Schema="dbo" store:Type="Tables" />
-<<<<<<< HEAD
-    <AssociationSet Name="FK__CulturalP__IdPla__47DBAE45" Association="Self.FK__CulturalP__IdPla__47DBAE45">
-=======
     <AssociationSet Name="FK__CulturalP__IdPla__1A14E395" Association="Self.FK__CulturalP__IdPla__1A14E395">
->>>>>>> 14004035cb1c34c002dd2dfa7c336a09a8385745
       <End Role="Place" EntitySet="Place" />
       <End Role="CulturalPost" EntitySet="CulturalPost" />
     </AssociationSet>
-    <AssociationSet Name="FK__CulturalP__IdThe__48CFD27E" Association="Self.FK__CulturalP__IdThe__48CFD27E">
+    <AssociationSet Name="FK__CulturalP__IdThe__1B0907CE" Association="Self.FK__CulturalP__IdThe__1B0907CE">
       <End Role="ThemeOfPost" EntitySet="ThemeOfPost" />
       <End Role="CulturalPost" EntitySet="CulturalPost" />
     </AssociationSet>
-    <AssociationSet Name="FK__Question__IdTest__5441852A" Association="Self.FK__Question__IdTest__5441852A">
+    <AssociationSet Name="FK__Question__IdTest__20C1E124" Association="Self.FK__Question__IdTest__20C1E124">
       <End Role="Test" EntitySet="Test" />
       <End Role="Question" EntitySet="Question" />
     </AssociationSet>
-    <AssociationSet Name="FK__StudyPost__IdThe__3E52440B" Association="Self.FK__StudyPost__IdThe__3E52440B">
+    <AssociationSet Name="FK__StudyPost__IdThe__15502E78" Association="Self.FK__StudyPost__IdThe__15502E78">
       <End Role="ThemeOfPost" EntitySet="ThemeOfPost" />
       <End Role="StudyPost" EntitySet="StudyPost" />
     </AssociationSet>
-    <AssociationSet Name="FK__StudyPost__N__3D5E1FD2" Association="Self.FK__StudyPost__N__3D5E1FD2">
+    <AssociationSet Name="FK__StudyPost__N__145C0A3F" Association="Self.FK__StudyPost__N__145C0A3F">
       <End Role="Level" EntitySet="Level" />
       <End Role="StudyPost" EntitySet="StudyPost" />
     </AssociationSet>
-    <AssociationSet Name="FK__Test__N__5165187F" Association="Self.FK__Test__N__5165187F">
+    <AssociationSet Name="FK__Test__N__1DE57479" Association="Self.FK__Test__N__1DE57479">
       <End Role="Level" EntitySet="Level" />
       <End Role="Test" EntitySet="Test" />
     </AssociationSet>

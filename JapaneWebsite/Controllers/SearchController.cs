@@ -1,5 +1,4 @@
 ﻿using JapaneWebsite.Models;
-using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,53 +56,27 @@ namespace JapaneWebsite.Controllers
             model.volcabularies = GetVolcabularies(SearchString);
             return View(model);
         }
-        public ActionResult IndexByLevel(string SearchString,int? Page_No, int Size_Of_Page = 10)
+        public ActionResult IndexByLevel(string SearchString)
         {
             if (String.IsNullOrEmpty(SearchString))
             {
                 SearchString = "";
             }
-            ViewBag.SearchString = SearchString;
-            int Number_Of_Page = (Page_No) ?? 1;
-            var dba = db.Volcabularies.Where(s => s.N.Contains(SearchString)).OrderBy(s => s.IdVol).ToPagedList(Number_Of_Page, Size_Of_Page);
-            return View(dba);
-        }
-        public ActionResult IndexByLevelGrammar(string SearchString, int? Page_No, int Size_Of_Page = 10)
-        {
-            if (String.IsNullOrEmpty(SearchString))
-            {
-                SearchString = "";
-            }
-            ViewBag.SearchString = SearchString;
-            int Number_Of_Page = (Page_No) ?? 1;
-            var dba = db.StudyPosts.Where(s => s.N.Contains(SearchString)).OrderBy(s => s.IdStudyPost).ToPagedList(Number_Of_Page, Size_Of_Page);
-            return View(dba);
-        }
-        public ActionResult IndexByTheme(int? id,string name, int? Page_No, int Size_Of_Page = 5)
-        {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            
             ViewModel model = new ViewModel();
-            model.culturalPosts = GetCulturalByThemeOfPost(id, name);
-            model.studyPosts = GetStudyPostByThemeOfPost(id,name);
-            //model.studyPostsPagelist=db.StudyPosts.OrderBy(s=>s.IdStudyPost)
+            model.volcabularies = GetVolcabulariesByLevel(SearchString);
             return View(model);
         }
-
-        public List<StudyPost> GetAllGrammarN(string name)
-=======
-=======
-            int Number_Of_Page = (Page_No) ?? 1;
->>>>>>> parent of 1400403... Update
+        public ActionResult IndexByTheme(int? id,string name)
+        {
+        
             ViewModel model = new ViewModel();
+
             model.culturalPosts = GetCulturalByThemeOfPost(id, name);
-            model.studyPosts = GetStudyPostByThemeOfPost(id, name);
+            model.studyPosts = GetStudyPostByThemeOfPost(id,name);
             return View(model);
         }
 
         public List<StudyPost> GetAllGrammar(string name)
->>>>>>> 14004035cb1c34c002dd2dfa7c336a09a8385745
         {
             return db.StudyPosts.Where(s => s.Name.Contains(name)).OrderByDescending(s => s.IdStudyPost).ToList();
         }
@@ -113,11 +86,7 @@ namespace JapaneWebsite.Controllers
         public ActionResult GroupPost(string name)
         {
             ViewModel model = new ViewModel();
-<<<<<<< HEAD
-            model.studyPosts = GetAllGrammarN(name);
-=======
             model.studyPosts = GetAllGrammar(name);
->>>>>>> 14004035cb1c34c002dd2dfa7c336a09a8385745
             return View(model);
         }
 

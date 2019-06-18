@@ -285,6 +285,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\source.css" />
+    <Content Include="Assets\icon\android-chrome-192x192.png" />
+    <Content Include="Assets\icon\android-chrome-512x512.png" />
+    <Content Include="Assets\icon\apple-touch-icon.png" />
+    <Content Include="Assets\icon\favicon-16x16.png" />
+    <Content Include="Assets\icon\favicon-32x32.png" />
+    <Content Include="Assets\icon\favicon.ico" />
     <Content Include="Assets\img\japan-header-01.jpg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -1367,6 +1373,7 @@
     <Content Include="Areas\Admin\Views\Volcabularies\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Volcabularies\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Assets\icon\site.webmanifest" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

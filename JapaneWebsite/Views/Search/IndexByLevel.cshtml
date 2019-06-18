@@ -1,5 +1,4 @@
-﻿@model IEnumerable<JapaneWebsite.Volcabulary>
-@using PagedList;
+﻿@model JapaneWebsite.Models.ViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_ShareLayout.cshtml";
@@ -12,26 +11,3 @@
     <hr />
 </div>
 
-@{
-    if (((IPagedList)Model).PageNumber == 1)
-    {
-        @Html.ActionLink("Previous page", "IndexByLevel", new { Page_No = ((IPagedList)Model).PageNumber, SearchString = ViewBag.SearchString })
-    }
-    else
-    {
-        @Html.ActionLink("Previous page", "IndexByLevel", new { Page_No = ((IPagedList)Model).PageNumber - 1, SearchString = ViewBag.SearchString })
-    }
-}
-
-Page @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 0 : ((IPagedList)Model).PageNumber) in @(((IPagedList)Model).PageCount) (pages)|
-@{
-    if (((IPagedList)Model).PageNumber >= ((IPagedList)Model).PageCount)
-    {
-        @Html.ActionLink("Next page", "IndexByLevel", new { Page_No = ((IPagedList)Model).PageNumber, SearchString = ViewBag.SearchString })
-    }
-    else
-    {
-        @Html.ActionLink("Next page", "IndexByLevel", new { Page_No = ((IPagedList)Model).PageNumber + 1, SearchString = ViewBag.SearchString })
-    }
-
-}
