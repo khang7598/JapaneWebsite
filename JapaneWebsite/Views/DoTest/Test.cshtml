@@ -4,13 +4,12 @@
     <style>
         label {
             display: block;
-            padding-left:20px;
+            padding-left: 20px;
         }
 
         input[type=submit] {
             margin-top: 15px;
         }
-
     </style>
     @{
         var count = 0;
@@ -49,9 +48,9 @@
             <div class="text-center" style="padding:10px">
                 <input type="submit" formmethod="post" class="btn btn-outline-success" />
             </div>
-            </form>
+        </form>
     </div>
-    
+
     <script>
         function clearAnswers() {
             $("img").each(function () {
@@ -73,7 +72,7 @@
             img.style.height = '20px';
             img.style.width = '20px';
             el.append(img);
-            
+
         }
         $("form").on("submit", function (e) {
             e.preventDefault();
@@ -85,7 +84,7 @@
                 var answer = $(this).find("input:checked"),
                     key = answer.attr("name"),
                     val = answer.attr("value");
-                
+
                 if (answer.length === 0) {
                     markIncorrect($(this).find("p"));
                     quesCount++;
@@ -97,17 +96,17 @@
                     quesCount++;
                     point++;
                 }
-              
+
             });
             setTimeout(function () {
                 $("#content").html("Bạn đã đúng " + point + " trên " + quesCount);
             }, 100);
-               
+
         });
         var answers = {
             "@list[0].Name": "@list[0].Answer"
         };
-        
+
         @for(var g = 1; g < list.Count; g++)
         {
             <text>
