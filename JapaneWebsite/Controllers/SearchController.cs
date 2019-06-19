@@ -78,7 +78,7 @@ namespace JapaneWebsite.Controllers
 
         public List<StudyPost> GetAllGrammar(string name)
         {
-            return db.StudyPosts.Where(s => s.Name.Contains(name)).OrderByDescending(s => s.IdStudyPost).ToList();
+            return db.StudyPosts.Where(s => s.Name.Contains(name)).OrderBy(s => s.IdStudyPost).ToList();
         }
 
 
