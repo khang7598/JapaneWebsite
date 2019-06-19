@@ -83,7 +83,7 @@
     <h1>@Html.DisplayFor(model => model.Name) </h1>
     <p>@Html.DisplayFor(model => model.Date) </p>
     <hr />
-    <dl class="text-center">
+    <dl class="dl-horizontal">
         @*<dt>
                 @Html.DisplayNameFor(model => model.Name)
             </dt>
@@ -107,7 +107,9 @@
             <dd>
                 @Html.DisplayFor(model => model.Date)
             </dd>*@
-        @Html.Raw(Model.Detail)
+        <dd>
+            @Html.Raw(Model.Detail)
+        </dd>
     </dl>
     <hr />
 </div>
