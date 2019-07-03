@@ -21,7 +21,7 @@ namespace JapaneWebsite.Controllers
         }
         public List<ThemeOfPost> GetThemeOfPosts()
         {
-            return db.ThemeOfPosts.ToList();
+            return db.ThemeOfPosts.OrderByDescending(s => s.IdThemePost).ToList(); ;
         }
         public List<CulturalPost> GetCulturalPosts()
         {

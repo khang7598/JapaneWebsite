@@ -1,4 +1,5 @@
 ﻿using JapaneWebsite.Models;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,13 @@ namespace JapaneWebsite.Controllers
             return db.Questions.Where(a=>a.IdTest==id).ToList();
         }
         // GET: DoTest
-        public ActionResult Index()
+        public ActionResult Index(int? Page_No, int? cateId, int Size_Of_Page = 8)
         {
-            return View();
+            
+                int Number_Of_Page = (Page_No) ?? 1;
+                var testPosts = db.Tests.OrderBy(s => s.IdTest).ToPagedList(Number_Of_Page, Size_Of_Page);
+                return View(testPosts);
+ 
         }
 
         public ActionResult Test(int? id)

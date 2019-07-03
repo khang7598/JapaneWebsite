@@ -11,7 +11,8 @@ namespace JapaneWebsite
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web.Mvc;
+
     public partial class CulturalPost
     {
         public int IdCultural { get; set; }
@@ -19,6 +20,7 @@ namespace JapaneWebsite
         public string Description { get; set; }
         public System.DateTime Date { get; set; }
         public string Img { get; set; }
+        [AllowHtml]
         public string Detail { get; set; }
         public Nullable<int> IdPlace { get; set; }
         public Nullable<int> IdThemePost { get; set; }

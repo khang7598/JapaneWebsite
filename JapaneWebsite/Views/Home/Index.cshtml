@@ -8,7 +8,7 @@
         <div class="col-sm-9">
             <div class="card shadow">
                 <div class="card-header" style="height:50px">
-                    <h4>Tin tức</h4>
+                    <h4>Hình ảnh đẹp</h4>
                 </div>
                 <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -71,7 +71,7 @@
                 </div>
                 @Html.Partial("_ArticleTest", Model)
                 <div class="card-footer text-right" style="">
-                    <a href="#" class="card-link">Xem thêm</a>
+                    @Html.ActionLink("Xem thêm", "Index", "Dotest", null, new { @class = "card-link" })
                 </div>
             </div>
         </div>

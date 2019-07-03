@@ -1,0 +1,68 @@
+﻿@model IEnumerable<JapaneWebsite.Test>
+@using PagedList;
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+}
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Level.N)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThemeOfPost.Name)
+        </th>
+        <th></th>
+    </tr>*@
+<nav aria-label="breadcrumb shadow" style="margin-top:50px">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="~/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Test</li>
+    </ol>
+</nav>
+@foreach (var item in Model)
+{
+    <div class="container">
+        <div class="card-body shadow">
+            <img class="rounded float-left col-2" alt="Error" src="https://ih1.redbubble.net/image.233836939.0458/ap,550x550,16x12,1,transparent,t.u1.png" />
+            <h5 class="card-title">@item.Name</h5>
+            <p class="card-text">@item.Detail</p>
+          
+            @Html.ActionLink("Làm bài", "Test", new { id = item.IdTest }, new { @class = "btn btn-primary" })
+        </div>
+        <hr />
+    </div>
+}
+<div class="text-center">
+    @if (((IPagedList)Model).PageNumber == 1)
+    {
+        @Html.ActionLink("<<", "Index", new { Page_No = ((IPagedList)Model).PageNumber }, new { @class = "page-item" })
+    }
+    else
+    {
+        @Html.ActionLink("<<", "Index", new { Page_No = ((IPagedList)Model).PageNumber - 1 })
+    }
+    @*| Trang @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 1 : ((IPagedList)Model).PageNumber) trong tổng số @(((IPagedList)Model).PageCount) (trang) |*@
+    Page @(((IPagedList)Model).PageCount < ((IPagedList)Model).PageNumber ? 0 : ((IPagedList)Model).PageNumber)  of @(((IPagedList)Model).PageCount)
+    @if (((IPagedList)Model).PageNumber < ((IPagedList)Model).PageCount)
+    {
+        @Html.ActionLink(">>", "Index", new { Page_No = ((IPagedList)Model).PageNumber + 1 })
+    }
+    else
+    {
+        @Html.ActionLink(">>", "Index", new { Page_No = ((IPagedList)Model).PageNumber })
+    }
+</div>
+

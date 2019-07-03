@@ -1455,6 +1455,7 @@
     <Content Include="Views\Words\Index.cshtml" />
     <Content Include="Views\Shared\_ArticleTuVung.cshtml" />
     <Content Include="Views\Search\IndexByLevel.cshtml" />
+    <Content Include="Views\DoTest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -29,7 +29,7 @@
 
                 count++;
                 <div class="question">
-                    <p class="alert alert-primary"><strong>@count. @list[item].Name</strong></p>
+                    <p class="alert alert-primary"><strong>@count.</strong> <span>@Html.Raw(list[item].Name)</span></p>
                     <label>
                         <input type="radio" name="@list[item].Name" value="@list[item].Option1">@list[item].Option1
                     </label>
@@ -84,6 +84,7 @@
                 var answer = $(this).find("input:checked"),
                     key = answer.attr("name"),
                     val = answer.attr("value");
+
 
                 if (answer.length === 0) {
                     markIncorrect($(this).find("p"));

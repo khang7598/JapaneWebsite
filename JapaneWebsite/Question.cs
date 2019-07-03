@@ -11,11 +11,13 @@ namespace JapaneWebsite
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web.Mvc;
+
     public partial class Question
     {
         public int IdQuestion { get; set; }
         public int IdTest { get; set; }
+        [AllowHtml]
         public string Name { get; set; }
         public string Option1 { get; set; }
         public string Option2 { get; set; }

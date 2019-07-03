@@ -47,7 +47,7 @@ namespace JapaneWebsite.Areas.Admin.Controllers
         // POST: Admin/Tests/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "IdTest,Name,N,Detail")] Test test)
         {
